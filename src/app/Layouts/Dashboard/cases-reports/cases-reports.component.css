@@ -5,10 +5,23 @@ kendo-card {
   align-items: center;
   border-radius: 0;
   border: none;
-  border-top: 5px solid red;
   box-shadow: 1px 0px 10px -5px gray;
   margin: 2px;
 }
+kendo-card-header {
+  padding: 1px;
+  width: 100%;
+  text-align: center;
+  background: gray;
+  color: white;
+}
+kendo-card-header h6 {
+  margin: 7px 0;
+}
+.card-top-border {
+  border-top: 5px solid red;
+}
+
 .card-title {
   font-size: 28px;
   text-align: center;
@@ -26,4 +39,7 @@ kendo-card {
   padding: 5px;
   margin: 0;
   box-sizing: border-box;
+}
+h1 {
+  margin: 0;
 }
