@@ -1,0 +1,29 @@
+kendo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  border: none;
+  border-top: 5px solid red;
+  box-shadow: 1px 0px 10px -5px gray;
+  margin: 2px;
+}
+.card-title {
+  font-size: 28px;
+  text-align: center;
+}
+.card-subtitle {
+  font-size: 15px;
+  margin: 0;
+  text-align: center;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* background-color: #f2f2f2; */
+  padding: 5px;
+  margin: 0;
+  box-sizing: border-box;
+}
