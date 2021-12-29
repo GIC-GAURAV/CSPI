@@ -9,6 +9,26 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   @Output() toggleDrawer = new EventEmitter<boolean>();
   showMenu  = true;
+  public splitButtonItems: Array<any> = [
+    {
+      text: "Keep Text Only",
+      icon: "paste-plain-text",
+      click: () => {
+        console.log("Keep Text Only click handler");
+      },
+    },
+    {
+      text: "Paste as HTML",
+      icon: "paste-as-html",
+    },
+    {
+      text: "Paste Markdown",
+      icon: "paste-markdown",
+    },
+    {
+      text: "Set Default Paste",
+    },
+  ];
   kendokaAvatar = 'https://www.telerik.com/kendo-angular-ui-develop/components/navigation/appbar/assets/kendoka-angular.png';
   constructor(private router : Router) { }
 
@@ -30,5 +50,19 @@ export class HeaderComponent implements OnInit {
    // localStorage.setItem("drawer", this.showMenu.toString());
   //  this.drawerService.setItem("drawer", this.showMenu.toString());
   }
+
+  public onSplitButtonClick(): void {
+    console.log("Paste");
+  }
+  public onSplitButtonItemClick(dataItem: any): void {
+    if (dataItem) {
+      console.log(dataItem.text);
+    }
+  }
+
+  public onButtonClick() {
+    console.log("click");
+  }
+
 
 }

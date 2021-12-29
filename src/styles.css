@@ -4,3 +4,17 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 65.2% !important;
 }
+.k-appbar {
+  background-image: none !important;
+  background-color: white !important;
+}
+.profile kendo-splitbutton button:nth-child(1) {
+  display: none !important;
+}
+.profile kendo-splitbutton button:nth-child(2) {
+  background-color: transparent;
+  border: none;
+}
+.profile kendo-splitbutton button:nth-child(2):active {
+  border: none;
+}

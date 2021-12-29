@@ -5,25 +5,145 @@
                 <div class="header-section">
                     <div class="header-section-left">
                         <div class="date-dropdown">
-                            <h3 class="remove-margin">CASE CREATION</h3>
+                            <h5 class="remove-margin" style="display: inline; margin-right: 10px;">CASE CREATION</h5>
                             <kendo-dropdownlist [data]="listItems" value="Basketball">
                             </kendo-dropdownlist>
                         </div>
-                        <h4 class="remove-margin">TODAY, DECEMBER 29, 2021</h4>
+                        <h5 class="remove-margin" style="margin-top: 8px;">TODAY, DECEMBER 29, 2021</h5>
                     </div>
-                    <div class="header-section-right"></div>
+                    <div class="header-section-right">
+
+                    </div>
                 </div>
             </kendo-card-header>
             <kendo-card-body>
-                This is body
+                <div class="row">
+                    <div class="gaurge-wraper" kendoTooltip>
+                        <kendo-circulargauge [value]="value1" title="Gaurav kakran">
+                            <kendo-circulargauge-scale
+                                [rangeSize]="rangeSize">
+                                <ng-template kendoCircularGaugeCenterTemplate let-value="value">
+                                    {{ value }}
+                                  </ng-template>
+                            </kendo-circulargauge-scale>                   
+                        </kendo-circulargauge>
+                        <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
+                    </div>
+                    <div class="gaurge-wraper">
+                        <kendo-circulargauge [value]="value1">
+                            <kendo-circulargauge-scale
+                                [rangeSize]="rangeSize">
+                                <ng-template kendoCircularGaugeCenterTemplate let-value="value">
+                                    {{ value }}
+                                  </ng-template>
+                            </kendo-circulargauge-scale>                   
+                        </kendo-circulargauge>
+                        <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
+                    </div>
+                    <div class="gaurge-wraper">
+                        <kendo-circulargauge [value]="value1">
+                            <kendo-circulargauge-scale
+                                [rangeSize]="rangeSize">
+                                <ng-template kendoCircularGaugeCenterTemplate let-value="value">
+                                    {{ value }}
+                                  </ng-template>
+                            </kendo-circulargauge-scale>                   
+                        </kendo-circulargauge>
+                        <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
+                    </div>
+                    <div class="gaurge-wraper">
+                        <kendo-circulargauge [value]="value1">
+                            <kendo-circulargauge-scale
+                                [rangeSize]="rangeSize">
+                                <ng-template kendoCircularGaugeCenterTemplate let-value="value">
+                                    {{ value }}
+                                  </ng-template>
+                            </kendo-circulargauge-scale>                   
+                        </kendo-circulargauge>
+                        <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
+                    </div>
+                    <div class="gaurge-wraper">
+                        <kendo-circulargauge [value]="value1">
+                            <kendo-circulargauge-scale
+                                [rangeSize]="rangeSize">
+                                <ng-template kendoCircularGaugeCenterTemplate let-value="value">
+                                    {{ value }}
+                                  </ng-template>
+                            </kendo-circulargauge-scale>                   
+                        </kendo-circulargauge>
+                        <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
+                    </div>
+                    <div class="gaurge-wraper">
+                        <kendo-circulargauge [value]="value1">
+                            <kendo-circulargauge-scale
+                                [rangeSize]="rangeSize">
+                                <ng-template kendoCircularGaugeCenterTemplate let-value="value">
+                                    {{ value }}
+                                  </ng-template>
+                            </kendo-circulargauge-scale>                   
+                        </kendo-circulargauge>
+                        <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
+                    </div>
+                    <div class="gaurge-wraper">
+                        <kendo-circulargauge [value]="value1">
+                            <kendo-circulargauge-scale
+                                [rangeSize]="rangeSize">
+                                <ng-template kendoCircularGaugeCenterTemplate let-value="value">
+                                    {{ value }}
+                                  </ng-template>
+                            </kendo-circulargauge-scale>                   
+                        </kendo-circulargauge>
+                        <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
+                    </div>
+                    <div class="gaurge-wraper">
+                        <kendo-circulargauge [value]="value1">
+                            <kendo-circulargauge-scale
+                                [rangeSize]="rangeSize">
+                                <ng-template kendoCircularGaugeCenterTemplate let-value="value">
+                                    {{ value }}
+                                  </ng-template>
+                            </kendo-circulargauge-scale>                   
+                        </kendo-circulargauge>
+                        <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
+                    </div>
+                    
+                </div>
             </kendo-card-body>
         </kendo-card>
         <kendo-card>
             <kendo-card-header>
-                <h1>Case Creation</h1>
+                <div class="header-section">
+                    <div class="header-section-left">
+                        <div class="date-dropdown">
+                            <h5 class="remove-margin" style="display: inline; margin-right: 10px;">CASE STATUS</h5>
+                            <kendo-dropdownlist [data]="listItems" value="Basketball">
+                            </kendo-dropdownlist>
+                        </div>
+                        <h5 class="remove-margin" style="margin-top: 8px;">TODAY, DECEMBER 29, 2021</h5>
+                    </div>
+                </div>
             </kendo-card-header>
-            <kendo-card-body>
-                This is body
+            <kendo-card-body style="width : 100%">
+               <div class="body-wrapper">
+                   <table style="width : 100%">
+                       <tr>
+                           <td>Request Id Generated</td>
+                           <td><kendo-icon name="check" themeColor="success"></kendo-icon></td>
+                       </tr>
+                       <tr>
+                        <td>Request Id Generated</td>
+                        <td><kendo-icon name="check" themeColor="success"></kendo-icon></td>
+                    </tr>
+                    <tr>
+                        <td>Request Id Generated</td>
+                        <td><kendo-icon name="check" themeColor="success"></kendo-icon></td>
+                    </tr>
+                    <tr>
+                        <td>Request Id Generated</td>
+                        <td><kendo-icon name="check" themeColor="success"></kendo-icon></td>
+                    </tr>
+                   </table>
+               </div>
             </kendo-card-body>
         </kendo-card>
     </div>

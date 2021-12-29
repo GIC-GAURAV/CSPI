@@ -1,13 +1,15 @@
 .detail-section {
   width: 100%;
-  height: 200px;
+  /* height: 200px; */
   border: 1px solid purple;
   background-color: white;
   margin: 8px;
+  margin-bottom: 0;
   display: flex;
 }
 kendo-card-header {
   width: 100%;
+  padding-bottom: 0;
 }
 .header-section {
   padding: 6px;
@@ -15,18 +17,20 @@ kendo-card-header {
 kendo-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   border-radius: 0;
   border: none;
   box-shadow: 1px 0px 10px -5px gray;
-  margin: 8px;
+  margin: 10px;
   width: -webkit-fill-available !important;
 }
-
+kendo-card kendo-card-body {
+  text-align: left !important;
+}
 .detail-section kendo-card {
   flex-basis: 100%;
-  border: 1px solid gray;
+  border: 1px solid rgb(207, 202, 202);
   box-shadow: none;
 }
 .detail-section kendo-card:nth-child(2) {
@@ -36,7 +40,7 @@ kendo-card {
 .row {
   display: flex;
   /* flex-wrap: wrap; */
-  justify-content: center;
+  /* justify-content: center; */
   /* background-color: #f2f2f2; */
   padding: 5px;
   margin: 0;
@@ -44,4 +48,30 @@ kendo-card {
 }
 .remove-margin {
   margin: 0;
+}
+.k-gauge {
+  height: 80px !important;
+  width: 80px !important;
+  margin: 5px;
+}
+.gaurge-wraper {
+  text-align: center;
+}
+.gaurge-wraper h6 {
+  font-weight: bold;
+  text-overflow: wrap;
+}
+.body-wrapper table td:nth-child(1) {
+  text-align: left;
+  font-size: 11px !important;
+}
+.body-wrapper table td:nth-child(2) {
+  text-align: right;
+}
+.body-wrapper table td:nth-child(2) kendo-icon {
+  border: 1px solid green;
+  font-weight: bold;
+  border-radius: 50%;
+  font-size: 14px;
+  padding: 1px;
 }

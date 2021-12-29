@@ -9,6 +9,7 @@
   padding: 0 10px;
   height: 8vh !important;
 }
+
 /* .bgImage {
         position: relative;
         height: 100vh;
@@ -40,4 +41,14 @@ li:hover {
 }
 .username {
   cursor: pointer;
+}
+.k-textbox {
+  width: 180px;
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+.k-textbox .send-button {
+  color: #ff6358;
+  width: 44px;
 }

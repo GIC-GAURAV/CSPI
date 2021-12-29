@@ -10,10 +10,23 @@
   </kendo-appbar-section>
 
   <kendo-appbar-spacer></kendo-appbar-spacer>
-  <kendo-appbar-section><img src="/assets/Images/ngindia.png" class="logo-img"></kendo-appbar-section>
+  <!-- <kendo-appbar-section><img src="/assets/Images/ngindia.png" class="logo-img"></kendo-appbar-section> -->
   <kendo-appbar-spacer></kendo-appbar-spacer>
   <!-- <kendo-appbar-spacer></kendo-appbar-spacer> -->
 
+  <kendo-textbox placeholder="Search" [clearButton]="true">
+    <!-- <ng-template kendoTextBoxPrefixTemplate>
+      <button kendoButton look="clear" icon="image"></button>
+      <button kendoButton look="clear" icon="calendar"></button>
+      <kendo-textbox-separator></kendo-textbox-separator>
+    </ng-template> -->
+    <ng-template kendoTextBoxSuffixTemplate>
+      <!-- <kendo-textbox-separator></kendo-textbox-separator> -->
+      <!-- <button kendoButton look="clear" class="send-button">Send</button> -->
+      <kendo-icon name="search"></kendo-icon>
+    </ng-template>
+  </kendo-textbox>
+  
   <kendo-appbar-section class="actions">
       <kendo-badge-container>
           <button class="k-button k-button-clear">
@@ -23,9 +36,14 @@
       </kendo-badge-container>
       <span class="k-appbar-separator"></span>
   </kendo-appbar-section>
-
-  <kendo-appbar-section>
-      <kendo-avatar [imageSrc]="kendokaAvatar" shape="circle" width="26px" height="26px"></kendo-avatar>
-  </kendo-appbar-section>
+  <kendo-appbar-section class="profile">
+    <kendo-avatar [imageSrc]="kendokaAvatar" shape="circle" width="26px" height="26px"></kendo-avatar>
+    <kendo-splitbutton
+    [data]="splitButtonItems"
+    (itemClick)="onSplitButtonItemClick($event)"
+    (buttonClick)="onSplitButtonClick()"
+  >
+  </kendo-splitbutton>
+</kendo-appbar-section>
   </kendo-appbar>
 

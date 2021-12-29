@@ -8,6 +8,9 @@ import {ScrollViewModule} from '@progress/kendo-angular-scrollview';
 import { ReportDetailComponent } from './report-detail/report-detail.component'
 import {DropDownListModule} from '@progress/kendo-angular-dropdowns'
 import {TreeViewModule} from '@progress/kendo-angular-treeview'
+import {GaugesModule} from '@progress/kendo-angular-gauges'
+import {TooltipModule} from '@progress/kendo-angular-tooltip'
+import {IconsModule} from '@progress/kendo-angular-icons'
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import {TreeViewModule} from '@progress/kendo-angular-treeview'
     AvatarModule,
     ScrollViewModule,
     DropDownListModule,
-    TreeViewModule
+    TreeViewModule,
+    GaugesModule,
+    TooltipModule,
+    IconsModule
   ]
 })
 export class CasesReportsModule { }
