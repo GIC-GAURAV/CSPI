@@ -6,7 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cases-reports.component.css']
 })
 export class CasesReportsComponent implements OnInit {
-
+  public items: Array<{ url: string }> = [
+    {
+      url: "https://www.telerik.com/kendo-angular-ui-develop/components/layout/card/assets/kukeri.jpg",
+    },
+    {
+      url: "https://www.telerik.com/kendo-angular-ui-develop/components/layout/card/assets/martenitsa.jpg",
+    },
+    {
+      url: "https://www.telerik.com/kendo-angular-ui-develop/components/layout/card/assets/rose_festival.jpg",
+    },
+  ];
   constructor() { }
 
   ngOnInit(): void {

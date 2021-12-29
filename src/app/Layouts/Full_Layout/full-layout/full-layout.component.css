@@ -1,7 +1,7 @@
 kendo-drawer-container {
   flex: 1 1 auto;
   overflow-y: auto;
-  /* height: 100vh; */
+  height: 92vh;
 }
 kendo-drawer {
   background-color: #2c3145 !important;

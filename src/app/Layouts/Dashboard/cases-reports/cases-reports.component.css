@@ -6,7 +6,8 @@ kendo-card {
   border-radius: 0;
   border: none;
   box-shadow: 1px 0px 10px -5px gray;
-  margin: 2px;
+  margin: 8px;
+  width: -webkit-fill-available !important;
 }
 kendo-card-header {
   padding: 1px;
@@ -19,7 +20,10 @@ kendo-card-header h6 {
   margin: 7px 0;
 }
 .card-top-border {
-  border-top: 5px solid red;
+  border-top: 7px solid transparent;
+  width: -webkit-fill-available;
+  border-image: linear-gradient(45deg, #cb4c7c, #f77982);
+  border-image-slice: 1;
 }
 
 .card-title {
@@ -33,7 +37,7 @@ kendo-card-header h6 {
 }
 .row {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: center;
   /* background-color: #f2f2f2; */
   padding: 5px;
@@ -43,3 +47,32 @@ kendo-card-header h6 {
 h1 {
   margin: 0;
 }
+.row2 kendo-card .card-content h1 {
+  font-weight: bold;
+}
+.row2 kendo-card kendo-card-body {
+  padding: 10px;
+}
+
+.row2 .k-card-footer {
+  padding: 5px 0 !important;
+  border-style: none;
+  background-color: #f6f6f6;
+  width: inherit;
+}
+.row2 .k-card-footer table {
+  margin: 0 auto;
+}
+.row2 .k-card-footer table td {
+  font-size: 9px;
+}
+.row2 .k-card-footer table tr {
+  line-height: 0.8;
+}
+.row2 .k-card-footer table td:nth-child(2) {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* #cb4c7c
+#f77982 */

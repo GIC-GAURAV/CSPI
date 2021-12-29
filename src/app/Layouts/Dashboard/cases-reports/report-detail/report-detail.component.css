@@ -1,0 +1,47 @@
+.detail-section {
+  width: 100%;
+  height: 200px;
+  border: 1px solid purple;
+  background-color: white;
+  margin: 8px;
+  display: flex;
+}
+kendo-card-header {
+  width: 100%;
+}
+.header-section {
+  padding: 6px;
+}
+kendo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  border: none;
+  box-shadow: 1px 0px 10px -5px gray;
+  margin: 8px;
+  width: -webkit-fill-available !important;
+}
+
+.detail-section kendo-card {
+  flex-basis: 100%;
+  border: 1px solid gray;
+  box-shadow: none;
+}
+.detail-section kendo-card:nth-child(2) {
+  flex-basis: 400px;
+  border: none;
+}
+.row {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  /* background-color: #f2f2f2; */
+  padding: 5px;
+  margin: 0;
+  box-sizing: border-box;
+}
+.remove-margin {
+  margin: 0;
+}
