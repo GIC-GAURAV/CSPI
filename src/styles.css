@@ -4,6 +4,15 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 65.2% !important;
 }
+.row {
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* justify-content: center; */
+  /* background-color: #f2f2f2; */
+  padding: 5px;
+  margin: 0;
+  box-sizing: border-box;
+}
 .k-appbar {
   background-image: none !important;
   background-color: white !important;
@@ -17,4 +26,14 @@ body {
 }
 .profile kendo-splitbutton button:nth-child(2):active {
   border: none;
+}
+.row2 .k-card {
+  overflow: visible !important;
+}
+kendo-tooltip {
+  background: rgb(255, 255, 255) !important;
+  color: black !important;
+}
+.remove-margin {
+  margin: 0;
 }

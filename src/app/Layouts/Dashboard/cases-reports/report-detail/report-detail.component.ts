@@ -18,9 +18,23 @@ export class ReportDetailComponent implements OnInit {
   ];
   public colors : any[] = [
     {
-      from : 0,
+      to : 0,
+      color : "#f80308"
+    },
+    {
+      from : 25,
+      to : 50,
+      color : "#fb7c06"
+    },
+    {
+      from : 50,
+      to : 75,
+      color : "#09b602"
+    },
+    {
+      from : 75,
       to : 100,
-      color : "#37b400"
+      color : "#027515"
     }
   ]
   public value1 = 30;
@@ -29,6 +43,8 @@ export class ReportDetailComponent implements OnInit {
   public value4 = 60;
   public value5 = 70;
   public value6 = 80;
+  public value7 = 70;
+  public value8 = 80;
   public rangeSize = 10
   public rangePlaceholderColor = ""
 

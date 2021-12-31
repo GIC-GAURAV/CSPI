@@ -13,6 +13,7 @@ kendo-card-header {
 }
 .header-section {
   padding: 6px;
+  display: flex;
 }
 kendo-card {
   display: flex;
@@ -46,9 +47,7 @@ kendo-card kendo-card-body {
   margin: 0;
   box-sizing: border-box;
 }
-.remove-margin {
-  margin: 0;
-}
+
 .k-gauge {
   height: 80px !important;
   width: 80px !important;
@@ -61,11 +60,15 @@ kendo-card kendo-card-body {
   font-weight: bold;
   text-overflow: wrap;
 }
-.body-wrapper table td:nth-child(1) {
+.body-wrapper {
+  overflow-y: scroll;
+  height: 130px;
+}
+table td:nth-child(1) {
   text-align: left;
   font-size: 11px !important;
 }
-.body-wrapper table td:nth-child(2) {
+table td:nth-child(2) {
   text-align: right;
 }
 .body-wrapper table td:nth-child(2) kendo-icon {
@@ -74,4 +77,27 @@ kendo-card kendo-card-body {
   border-radius: 50%;
   font-size: 14px;
   padding: 1px;
+}
+.body-wrapper::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.body-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+.body-wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.body-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.k-tooltip {
 }

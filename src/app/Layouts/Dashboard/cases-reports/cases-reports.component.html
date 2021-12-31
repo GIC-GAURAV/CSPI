@@ -4,7 +4,15 @@
         <kendo-card-body class="k-hstack">
             <div class="card-content">
                 <h1 kendoCardTitle class="card-title">1080</h1>
-                <p kendoCardSubtitle class="card-subtitle">Sub title</p>
+                <p kendoCardSubtitle class="card-subtitle">Exception</p>
+            </div>
+        </kendo-card-body>
+    </kendo-card>
+    <kendo-card class="card-top-border" >
+        <kendo-card-body class="k-hstack">
+            <div class="card-content">
+                <h1 kendoCardTitle class="card-title">1080</h1>
+                <p kendoCardSubtitle class="card-subtitle">Exception</p>
             </div>
         </kendo-card-body>
     </kendo-card>
@@ -12,7 +20,7 @@
         <kendo-card-body class="k-hstack">
             <div class="card-content">
                 <h1 kendoCardTitle class="card-title">1080</h1>
-                <p kendoCardSubtitle class="card-subtitle">Sub title</p>
+                <p kendoCardSubtitle class="card-subtitle">Exception</p>
             </div>
         </kendo-card-body>
     </kendo-card>
@@ -20,29 +28,24 @@
         <kendo-card-body class="k-hstack">
             <div class="card-content">
                 <h1 kendoCardTitle class="card-title">1080</h1>
-                <p kendoCardSubtitle class="card-subtitle">Sub title</p>
-            </div>
-        </kendo-card-body>
-    </kendo-card>
-    <kendo-card class="card-top-border">
-        <kendo-card-body class="k-hstack">
-            <div class="card-content">
-                <h1 kendoCardTitle class="card-title">1080</h1>
-                <p kendoCardSubtitle class="card-subtitle">Sub title</p>
+                <p kendoCardSubtitle class="card-subtitle">Exception</p>
             </div>
         </kendo-card-body>
     </kendo-card>
 </div>
 
 <div class="row row2">
-    <kendo-card width="100px">
+    <kendo-card [ngClass]="true ? 'selected-card-border' : ''">
+        <div class="caret-up" *ngIf="true">
+            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
+        </div>
         <kendo-card-header>
             <h6>CASE CREATION</h6>
         </kendo-card-header>
         <kendo-card-body class="k-hstack">
             <div class="card-content">
-                <h1 kendoCardTitle class="card-title">1</h1>
-                <p kendoCardSubtitle class="card-subtitle">Sub title</p>
+                <h1 kendoCardTitle class="card-title light-green">1</h1>
+                <p kendoCardSubtitle class="card-subtitle">Exception</p>
                 
             </div>
         </kendo-card-body>
@@ -63,14 +66,17 @@
             </table>
         </kendo-card-footer>
     </kendo-card>
-    <kendo-card >
+    <kendo-card [ngClass]="false ? 'selected-card-border' : ''">
+        <div class="caret-up" *ngIf="false">
+            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
+        </div>
         <kendo-card-header>
             <h6>CASE CREATION</h6>
         </kendo-card-header>
         <kendo-card-body class="k-hstack">
             <div class="card-content">
-                <h1 kendoCardTitle class="card-title">2</h1>
-                <p kendoCardSubtitle class="card-subtitle">Sub title</p>
+                <h1 kendoCardTitle class="card-title red">2</h1>
+                <p kendoCardSubtitle class="card-subtitle">Exception</p>
             </div>
         </kendo-card-body>
         <kendo-card-footer>
@@ -90,14 +96,17 @@
             </table>
         </kendo-card-footer>
     </kendo-card>
-    <kendo-card >
+    <kendo-card [ngClass]="false ? 'selected-card-border' : ''">
+        <div class="caret-up" *ngIf="false">
+            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
+        </div>
         <kendo-card-header>
             <h6>CASE CREATION</h6>
         </kendo-card-header>
         <kendo-card-body class="k-hstack">
             <div class="card-content">
-                <h1 kendoCardTitle class="card-title">3</h1>
-                <p kendoCardSubtitle class="card-subtitle">Sub title</p>
+                <h1 kendoCardTitle class="card-title light-green">3</h1>
+                <p kendoCardSubtitle class="card-subtitle">Exception</p>
             </div>
         </kendo-card-body>
         <kendo-card-footer>
@@ -117,14 +126,17 @@
             </table>
         </kendo-card-footer>
     </kendo-card>
-    <kendo-card>
+    <kendo-card [ngClass]="false ? 'selected-card-border' : ''">
+        <div class="caret-up" *ngIf="false">
+            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
+        </div>
         <kendo-card-header>
             <h6>CASE CREATION</h6>
         </kendo-card-header>
         <kendo-card-body class="k-hstack">
             <div class="card-content">
-                <h1 kendoCardTitle class="card-title">4</h1>
-                <p kendoCardSubtitle class="card-subtitle">Sub title</p>
+                <h1 kendoCardTitle class="card-title orange">4</h1>
+                <p kendoCardSubtitle class="card-subtitle">Exception</p>
             </div>
         </kendo-card-body>
         <kendo-card-footer>
@@ -144,14 +156,17 @@
             </table>
         </kendo-card-footer>
     </kendo-card>
-    <kendo-card>
+    <kendo-card [ngClass]="false ? 'selected-card-border' : ''">
+        <div class="caret-up" *ngIf="false">
+            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
+        </div>
         <kendo-card-header>
             <h6>CASE CREATION</h6>
         </kendo-card-header>
         <kendo-card-body class="k-hstack">
             <div class="card-content">
-                <h1 kendoCardTitle class="card-title">5</h1>
-                <p kendoCardSubtitle class="card-subtitle">Sub title</p>
+                <h1 kendoCardTitle class="card-title orange">5</h1>
+                <p kendoCardSubtitle class="card-subtitle">Exception</p>
             </div>
         </kendo-card-body>
         <kendo-card-footer>
@@ -171,14 +186,17 @@
             </table>
         </kendo-card-footer>
     </kendo-card>
-    <kendo-card >
+    <kendo-card [ngClass]="false ? 'selected-card-border' : ''">
+        <div class="caret-up" *ngIf="false">
+            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
+        </div>
         <kendo-card-header>
             <h6>CASE CREATION</h6>
         </kendo-card-header>
         <kendo-card-body class="k-hstack">
             <div class="card-content">
-                <h1 kendoCardTitle class="card-title">6</h1>
-                <p kendoCardSubtitle class="card-subtitle">Sub title</p>
+                <h1 kendoCardTitle class="card-title orange">6</h1>
+                <p kendoCardSubtitle class="card-subtitle">Exception</p>
             </div>
         </kendo-card-body>
         <kendo-card-footer>
@@ -198,14 +216,17 @@
             </table>
         </kendo-card-footer>
     </kendo-card>
-    <kendo-card>
+    <kendo-card [ngClass]="false ? 'selected-card-border' : ''">
+        <div class="caret-up" *ngIf="false">
+            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
+        </div>
         <kendo-card-header>
             <h6>CASE CREATION</h6>
         </kendo-card-header>
         <kendo-card-body class="k-hstack">
             <div class="card-content">
-                <h1 kendoCardTitle class="card-title">7</h1>
-                <p kendoCardSubtitle class="card-subtitle">Sub title</p>
+                <h1 kendoCardTitle class="card-title orange">7</h1>
+                <p kendoCardSubtitle class="card-subtitle">Exception</p>
             </div>
         </kendo-card-body>
         <kendo-card-footer>
@@ -225,14 +246,17 @@
             </table>
         </kendo-card-footer>
     </kendo-card>
-    <kendo-card>
+    <kendo-card [ngClass]="false ? 'selected-card-border' : ''">
+        <div class="caret-up" *ngIf="false">
+            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
+        </div>
         <kendo-card-header>
             <h6>CASE CREATION</h6>
         </kendo-card-header>
         <kendo-card-body class="k-hstack">
             <div class="card-content">
-                <h1 kendoCardTitle class="card-title">8</h1>
-                <p kendoCardSubtitle class="card-subtitle">Sub title</p>
+                <h1 kendoCardTitle class="card-title light-green">8</h1>
+                <p kendoCardSubtitle class="card-subtitle">Exception</p>
             </div>
         </kendo-card-body>
         <kendo-card-footer>
@@ -252,14 +276,17 @@
             </table>
         </kendo-card-footer>
     </kendo-card>
-    <kendo-card >
+    <kendo-card [ngClass]="false ? 'selected-card-border' : ''">
+        <div class="caret-up" *ngIf="false">
+            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
+        </div>
         <kendo-card-header>
             <h6>CASE CREATION</h6>
         </kendo-card-header>
         <kendo-card-body class="k-hstack">
             <div class="card-content">
-                <h1 kendoCardTitle class="card-title">9</h1>
-                <p kendoCardSubtitle class="card-subtitle">Sub title</p>
+                <h1 kendoCardTitle class="card-title light-green">9</h1>
+                <p kendoCardSubtitle class="card-subtitle">Exception</p>
             </div>
         </kendo-card-body>
         <kendo-card-footer>
@@ -279,14 +306,17 @@
             </table>
         </kendo-card-footer>
     </kendo-card>
-    <kendo-card>
+    <kendo-card  [ngClass]="false ? 'selected-card-border' : ''">
+        <div class="caret-up" *ngIf="false">
+            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
+        </div>
         <kendo-card-header>
             <h6>CASE CREATION</h6>
         </kendo-card-header>
         <kendo-card-body class="k-hstack">
             <div class="card-content">
-                <h1 kendoCardTitle class="card-title">10</h1>
-                <p kendoCardSubtitle class="card-subtitle">Sub title</p>
+                <h1 kendoCardTitle class="card-title light-green">10</h1>
+                <p kendoCardSubtitle class="card-subtitle">Exception</p>
             </div>
         </kendo-card-body>
         <kendo-card-footer>

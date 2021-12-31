@@ -1,5 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 import { DrawerComponent, DrawerItem, DrawerSelectEvent } from '@progress/kendo-angular-layout';
 
 @Component({
@@ -17,18 +18,22 @@ import { DrawerComponent, DrawerItem, DrawerSelectEvent } from '@progress/kendo-
 })
 export class FullLayoutComponent implements OnInit {
   public selected = "Inbox";
-
-  constructor() { }
-  public items: Array<DrawerItem> = [
-    { text: "Inbox", icon: "k-i-inbox", selected: true },
-    { separator: true },
-    { text: "Favourites", icon: "k-i-star-outline" },
-    { text: "Notifications", icon: "k-i-bell" },
-    { text: "Calendar", icon: "k-i-calendar" },
-    { separator: true },
-    { text: "Attachments", icon: "k-i-hyperlink-email" },
-    { text: "Setting", icon: "k-i-cog" },
-  ];
+  public items: Array<any> = [];
+  constructor(private router: Router) {
+      this.items = this.mapItems(router.config);
+      this.items[0].selected = true;
+      console.log("Route : ",this.items, typeof(this.items))
+  }
+  // public items: Array<DrawerItem> = [
+  //   { text: "Inbox", icon: "k-i-inbox", selected: true, },
+  //   // { separator: true },
+  //   { text: "Favourites", icon: "k-i-star-outline" },
+  //   { text: "Notifications", icon: "k-i-bell" },
+  //   { text: "Calendar", icon: "k-i-calendar" },
+  //   { separator: true },
+  //   { text: "Attachments", icon: "k-i-hyperlink-email" },
+  //   { text: "Setting", icon: "k-i-cog" },
+  // ];
   ngOnInit(): void {
   }
   toggleDrawer(event : any, drawer: DrawerComponent) {
@@ -37,6 +42,17 @@ export class FullLayoutComponent implements OnInit {
   }
 
   public onSelect(ev: DrawerSelectEvent): void {
-    this.selected = ev.item.text;
+    this.router.navigate([ev.item.path]);
   }
+    public mapItems(routes: any[], path?: string): any[] {
+      console.log(routes[0]._loadedConfig.routes[0].children)
+      routes = routes[0]._loadedConfig.routes[0].children
+      return routes.map((item) => {
+        return {
+          text: item.text,
+          icon: item.icon,
+          path: item.path ? item.path : "",
+        };
+      });
+    }
 }

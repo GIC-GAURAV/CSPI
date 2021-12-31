@@ -11,7 +11,7 @@ import {TreeViewModule} from '@progress/kendo-angular-treeview'
 import {GaugesModule} from '@progress/kendo-angular-gauges'
 import {TooltipModule} from '@progress/kendo-angular-tooltip'
 import {IconsModule} from '@progress/kendo-angular-icons'
-
+import {FusionChartsModule} from 'angular-fusioncharts'
 @NgModule({
   declarations: [
     CasesReportsComponent,
@@ -27,7 +27,8 @@ import {IconsModule} from '@progress/kendo-angular-icons'
     TreeViewModule,
     GaugesModule,
     TooltipModule,
-    IconsModule
+    IconsModule,
+    FusionChartsModule
   ]
 })
 export class CasesReportsModule { }

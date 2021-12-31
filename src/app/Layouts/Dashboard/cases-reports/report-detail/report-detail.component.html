@@ -17,9 +17,26 @@
                 </div>
             </kendo-card-header>
             <kendo-card-body>
+                <ng-template #template let-anchor style="background-color : red;">
+                    <h5>Document Converted Completed</h5>
+                    <table>
+                        <tr>
+                            <td>Cases Processed Successfully</td>
+                            <td>30</td>
+                        <tr>
+                        <tr>
+                            <td>Cases Failed</td>
+                            <td>9</td>
+                        <tr>
+                        <tr>
+                            <td>Average Time Taken Per Case</td>
+                            <td>1:23</td>
+                        <tr>
+                    </table>
+                  </ng-template>
                 <div class="row">
-                    <div class="gaurge-wraper" kendoTooltip>
-                        <kendo-circulargauge [value]="value1" title="Gaurav kakran">
+                    <div class="gaurge-wraper" kendoTooltip [tooltipTemplate]="template" filter="div">
+                        <kendo-circulargauge [value]="value1" >
                             <kendo-circulargauge-scale
                                 [rangeSize]="rangeSize">
                                 <ng-template kendoCircularGaugeCenterTemplate let-value="value">
@@ -29,8 +46,8 @@
                         </kendo-circulargauge>
                         <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
                     </div>
-                    <div class="gaurge-wraper">
-                        <kendo-circulargauge [value]="value1">
+                    <div class="gaurge-wraper" kendoTooltip [tooltipTemplate]="template" filter="div">
+                        <kendo-circulargauge [value]="value2" [colors]="colors">
                             <kendo-circulargauge-scale
                                 [rangeSize]="rangeSize">
                                 <ng-template kendoCircularGaugeCenterTemplate let-value="value">
@@ -40,8 +57,8 @@
                         </kendo-circulargauge>
                         <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
                     </div>
-                    <div class="gaurge-wraper">
-                        <kendo-circulargauge [value]="value1">
+                    <div class="gaurge-wraper" kendoTooltip [tooltipTemplate]="template" filter="div">
+                        <kendo-circulargauge [value]="value3" [colors]="colors">
                             <kendo-circulargauge-scale
                                 [rangeSize]="rangeSize">
                                 <ng-template kendoCircularGaugeCenterTemplate let-value="value">
@@ -51,8 +68,8 @@
                         </kendo-circulargauge>
                         <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
                     </div>
-                    <div class="gaurge-wraper">
-                        <kendo-circulargauge [value]="value1">
+                    <div class="gaurge-wraper" kendoTooltip [tooltipTemplate]="template" filter="div">
+                        <kendo-circulargauge [value]="value4" [colors]="colors">
                             <kendo-circulargauge-scale
                                 [rangeSize]="rangeSize">
                                 <ng-template kendoCircularGaugeCenterTemplate let-value="value">
@@ -62,8 +79,8 @@
                         </kendo-circulargauge>
                         <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
                     </div>
-                    <div class="gaurge-wraper">
-                        <kendo-circulargauge [value]="value1">
+                    <div class="gaurge-wraper" kendoTooltip [tooltipTemplate]="template" filter="div">
+                        <kendo-circulargauge [value]="value5"[colors]="colors">
                             <kendo-circulargauge-scale
                                 [rangeSize]="rangeSize">
                                 <ng-template kendoCircularGaugeCenterTemplate let-value="value">
@@ -73,8 +90,8 @@
                         </kendo-circulargauge>
                         <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
                     </div>
-                    <div class="gaurge-wraper">
-                        <kendo-circulargauge [value]="value1">
+                    <div class="gaurge-wraper" kendoTooltip [tooltipTemplate]="template" filter="div">
+                        <kendo-circulargauge [value]="value6" [colors]="colors">
                             <kendo-circulargauge-scale
                                 [rangeSize]="rangeSize">
                                 <ng-template kendoCircularGaugeCenterTemplate let-value="value">
@@ -84,8 +101,8 @@
                         </kendo-circulargauge>
                         <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
                     </div>
-                    <div class="gaurge-wraper">
-                        <kendo-circulargauge [value]="value1">
+                    <div class="gaurge-wraper" kendoTooltip [tooltipTemplate]="template" filter="div">
+                        <kendo-circulargauge [value]="value7" [colors]="colors">
                             <kendo-circulargauge-scale
                                 [rangeSize]="rangeSize">
                                 <ng-template kendoCircularGaugeCenterTemplate let-value="value">
@@ -95,8 +112,8 @@
                         </kendo-circulargauge>
                         <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
                     </div>
-                    <div class="gaurge-wraper">
-                        <kendo-circulargauge [value]="value1">
+                    <div class="gaurge-wraper" kendoTooltip [tooltipTemplate]="template" filter="div">
+                        <kendo-circulargauge [value]="value8" [colors]="colors">
                             <kendo-circulargauge-scale
                                 [rangeSize]="rangeSize">
                                 <ng-template kendoCircularGaugeCenterTemplate let-value="value">
@@ -131,6 +148,18 @@
                            <td><kendo-icon name="check" themeColor="success"></kendo-icon></td>
                        </tr>
                        <tr>
+                        <td>Request Id Generated</td>
+                        <td><kendo-icon name="check" themeColor="success"></kendo-icon></td>
+                    </tr>
+                    <tr>
+                        <td>Request Id Generated</td>
+                        <td><kendo-icon name="check" themeColor="success"></kendo-icon></td>
+                    </tr>
+                    <tr>
+                        <td>Request Id Generated</td>
+                        <td><kendo-icon name="check" themeColor="success"></kendo-icon></td>
+                    </tr>
+                    <tr>
                         <td>Request Id Generated</td>
                         <td><kendo-icon name="check" themeColor="success"></kendo-icon></td>
                     </tr>
