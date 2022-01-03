@@ -1,5 +1,5 @@
 app-case-detail-chart {
-  min-width: 480px;
+  /* max-width: 680px; */
   width: -webkit-fill-available;
 }
 .space-arround {
