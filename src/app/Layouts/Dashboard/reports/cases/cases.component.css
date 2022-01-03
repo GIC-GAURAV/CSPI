@@ -1,0 +1,58 @@
+.detail-section {
+  width: 100% !important;
+  /* height: 200px; */
+  border: 1px solid purple;
+  background-color: white;
+  margin: 2px 8px;
+  margin-bottom: 0;
+  display: flex;
+}
+kendo-card-body {
+  padding: 5px !important;
+}
+kendo-card-header {
+  width: 100% !important;
+  padding-bottom: 0;
+}
+.header-section {
+  padding: 6px;
+  display: flex;
+}
+kendo-card {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  border-radius: 0;
+  border: none;
+  box-shadow: 1px 0px 10px -5px gray;
+  margin: 10px;
+  width: -webkit-fill-available !important;
+}
+.detail-section kendo-card {
+  flex-basis: 100%;
+  border: 1px solid rgb(207, 202, 202);
+  box-shadow: none;
+}
+.detail-section kendo-card:nth-child(1) kendo-grid {
+  height: 200px;
+  overflow-y: scroll;
+}
+.detail-section kendo-card:nth-child(2) {
+  flex-basis: 400px;
+  border: none;
+}
+.row {
+  display: flex;
+  padding: 5px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.raphael-group-13-caption {
+  display: none;
+}
+
+th {
+  text-transform: uppercase;
+}

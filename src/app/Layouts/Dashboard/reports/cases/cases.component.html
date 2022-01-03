@@ -1,0 +1,86 @@
+  <div class="row">
+    <div class="detail-section">
+        <kendo-card>
+            <kendo-card-header>
+                <div class="header-section">
+                    <div class="header-section-left">
+                        <div class="date-dropdown">
+                            <h5 class="remove-margin" style="display: inline; margin-right: 10px;">CASE AUDIT TRAIL</h5>
+                            <kendo-dropdownlist [data]="listItems" value="Basketball">
+                            </kendo-dropdownlist>
+                        </div>
+                        <h5 class="remove-margin" style="margin-top: 8px;">TODAY, DECEMBER 29, 2021</h5>
+                    </div>
+                    <!-- <div class="header-section-right">
+                        <fusioncharts
+                        type="angulargauge"
+                        width="450"
+                        height="250"
+                        dataFormat="json"
+                        [dataSource]="dataSource"
+                       ></fusioncharts>
+                    </div> -->
+                </div>
+            </kendo-card-header>
+            <kendo-card-body>
+                <kendo-grid [data]="gridData" class="cases-grid">
+                    <kendo-grid-column field="CaseId" title="Case Id"> </kendo-grid-column>
+                    <kendo-grid-column field="StartStage" title="Start Stage"> </kendo-grid-column>
+                    <kendo-grid-column field="StartState" title="Start State">
+                    </kendo-grid-column>
+                    <kendo-grid-column field="CurrentState" title="Current State"> </kendo-grid-column>
+                    <kendo-grid-column field="CurrentStatus" title="Current Status"> </kendo-grid-column>
+                    <kendo-grid-column field="CurrentDescription" title="Current Description"> </kendo-grid-column>
+                  </kendo-grid>
+            </kendo-card-body>
+        </kendo-card>
+        <kendo-card>
+            <kendo-card-header>
+                <div class="header-section">
+                    <div class="header-section-left">
+                        <div class="date-dropdown">
+                            <h5 class="remove-margin" style="display: inline; margin-right: 10px;">CASE ACTION</h5>
+                            <kendo-dropdownlist [data]="listItems" value="Basketball">
+                            </kendo-dropdownlist>
+                        </div>
+                        <h5 class="remove-margin" style="margin-top: 8px;">TODAY, DECEMBER 29, 2021</h5>
+                    </div>
+                </div>
+            </kendo-card-header>
+            <kendo-card-body style="width : 100%">
+               <div class="body-wrapper">
+                   <table style="width : 100%">
+                       <tr>
+                           <td>Request Id Generated</td>
+                           <td><kendo-icon name="check" themeColor="success"></kendo-icon></td>
+                       </tr>
+                       <tr>
+                        <td>Request Id Generated</td>
+                        <td><kendo-icon name="check" themeColor="success"></kendo-icon></td>
+                    </tr>
+                    <tr>
+                        <td>Request Id Generated</td>
+                        <td><kendo-icon name="check" themeColor="success"></kendo-icon></td>
+                    </tr>
+                    <tr>
+                        <td>Request Id Generated</td>
+                        <td><kendo-icon name="check" themeColor="success"></kendo-icon></td>
+                    </tr>
+                    <tr>
+                        <td>Request Id Generated</td>
+                        <td><kendo-icon name="check" themeColor="success"></kendo-icon></td>
+                    </tr>
+                    <tr>
+                        <td>Request Id Generated</td>
+                        <td><kendo-icon name="check" themeColor="success"></kendo-icon></td>
+                    </tr>
+                    <tr>
+                        <td>Request Id Generated</td>
+                        <td><kendo-icon name="check" themeColor="success"></kendo-icon></td>
+                    </tr>
+                   </table>
+               </div>
+            </kendo-card-body>
+        </kendo-card>
+    </div>
+</div>

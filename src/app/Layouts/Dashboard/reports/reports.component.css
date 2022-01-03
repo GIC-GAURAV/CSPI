@@ -1,0 +1,7 @@
+app-case-detail-chart {
+  min-width: 480px;
+  width: -webkit-fill-available;
+}
+.space-arround {
+  padding: 10px;
+}
