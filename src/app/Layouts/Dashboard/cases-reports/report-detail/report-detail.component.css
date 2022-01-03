@@ -99,5 +99,6 @@ table td:nth-child(2) {
   background: #555;
 }
 
-.k-tooltip {
+.raphael-group-13-caption {
+  display: none;
 }

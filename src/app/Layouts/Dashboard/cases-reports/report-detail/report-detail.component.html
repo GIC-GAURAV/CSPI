@@ -12,7 +12,13 @@
                         <h5 class="remove-margin" style="margin-top: 8px;">TODAY, DECEMBER 29, 2021</h5>
                     </div>
                     <div class="header-section-right">
-
+                        <fusioncharts
+                        type="angulargauge"
+                        width="450"
+                        height="250"
+                        dataFormat="json"
+                        [dataSource]="dataSource"
+                       ></fusioncharts>
                     </div>
                 </div>
             </kendo-card-header>

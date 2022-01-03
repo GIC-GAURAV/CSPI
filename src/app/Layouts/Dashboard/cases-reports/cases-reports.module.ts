@@ -11,7 +11,19 @@ import {TreeViewModule} from '@progress/kendo-angular-treeview'
 import {GaugesModule} from '@progress/kendo-angular-gauges'
 import {TooltipModule} from '@progress/kendo-angular-tooltip'
 import {IconsModule} from '@progress/kendo-angular-icons'
-import {FusionChartsModule} from 'angular-fusioncharts'
+import { FusionChartsModule } from 'angular-fusioncharts';
+
+// Load FusionCharts
+import * as FusionCharts from 'fusioncharts';
+
+// Load Widgets
+import * as Widgets from 'fusioncharts/fusioncharts.widgets';
+
+// Load FusionTheme Theme
+import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion'
+
+// Add dependencies to FusionChartsModule
+FusionChartsModule.fcRoot(FusionCharts, Widgets, FusionTheme);
 @NgModule({
   declarations: [
     CasesReportsComponent,
