@@ -13,4 +13,9 @@ kendo-drawer {
 kendo-drawer-content {
   padding: 0 20px;
   background-color: #f2f2f2;
+  min-height: 92vh;
+}
+
+.k-drawer-push {
+  height: -webkit-fill-available;
 }
