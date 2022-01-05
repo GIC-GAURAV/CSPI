@@ -16,6 +16,9 @@ export class CaseDetailComponent implements OnInit {
     "Tennis",
     "Volleyball",
   ];
+  public start: Date = new Date ("10/07/2017"); 
+ 
+  public end: Date = new Date ("11/25/2017");
   constructor() { }
 
   ngOnInit(): void {

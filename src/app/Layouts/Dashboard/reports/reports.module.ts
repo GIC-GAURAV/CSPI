@@ -10,6 +10,7 @@ import {CardModule, AvatarModule} from '@progress/kendo-angular-layout'
 import {ScrollViewModule} from '@progress/kendo-angular-scrollview';
 import {TreeViewModule} from '@progress/kendo-angular-treeview'
 // import {GaugesModule} from '@progress/kendo-angular-gauges'
+import { DateRangePickerModule } from '@syncfusion/ej2-angular-calendars';
 import {TooltipModule} from '@progress/kendo-angular-tooltip'
 import {IconsModule} from '@progress/kendo-angular-icons'
 import { FusionChartsModule } from 'angular-fusioncharts';
@@ -48,7 +49,8 @@ FusionChartsModule.fcRoot(
     ScrollViewModule,
     IconsModule,
     TooltipModule,
-    TreeViewModule
+    TreeViewModule,
+    DateRangePickerModule
   ]
 })
 export class ReportsModule { }

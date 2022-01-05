@@ -1,6 +1,7 @@
-fusioncharts {
-  width: inherit !important;
-  /* border: 20px solid; */
-  display: block;
+kendo-card {
+  width: 100% !important;
   height: 100%;
+}
+#container-1 {
+  /* width: -webkit-fill-available !important; */
 }
