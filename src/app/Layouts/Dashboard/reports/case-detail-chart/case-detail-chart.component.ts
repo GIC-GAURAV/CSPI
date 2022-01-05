@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, DoCheck, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/Services/common.service';
 
 const  data = {
   chart: {
@@ -85,7 +86,8 @@ export class CaseDetailChartComponent implements OnInit {
   type = "msarea";
   dataFormat = "json";
   dataSource = data;
-  constructor() { }
+  width = '100%'
+  constructor(private commonSrv : CommonService) { }
 
   ngOnInit(): void {
   }

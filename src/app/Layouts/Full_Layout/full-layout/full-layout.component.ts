@@ -1,7 +1,8 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { DrawerComponent, DrawerItem, DrawerSelectEvent } from '@progress/kendo-angular-layout';
+import { CommonService } from 'src/app/Services/common.service';
 
 @Component({
   selector: 'app-full-layout',
@@ -19,10 +20,15 @@ import { DrawerComponent, DrawerItem, DrawerSelectEvent } from '@progress/kendo-
 export class FullLayoutComponent implements OnInit {
   public selected = "Inbox";
   public items: Array<any> = [];
-  constructor(private router: Router) {
+  constructor(private router: Router, private commonSrv : CommonService) {
       this.items = this.mapItems(router.config);
       this.items[0].selected = true;
       console.log("Route : ",this.items, typeof(this.items))
+  }
+
+  ngAfterViewInit() {
+    var drawerWidth = document.getElementById('drawerWidth')?.clientWidth
+    console.log("Width : ", drawerWidth)
   }
   // public items: Array<DrawerItem> = [
   //   { text: "Inbox", icon: "k-i-inbox", selected: true, },

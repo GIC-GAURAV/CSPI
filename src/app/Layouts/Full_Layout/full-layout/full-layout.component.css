@@ -19,3 +19,7 @@ kendo-drawer-content {
 .k-drawer-push {
   height: -webkit-fill-available;
 }
+#space {
+  background-color: green;
+  height: 100px;
+}

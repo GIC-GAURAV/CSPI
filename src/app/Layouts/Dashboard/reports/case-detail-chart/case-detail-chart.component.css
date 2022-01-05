@@ -1,7 +1,9 @@
 kendo-card {
-  width: 100% !important;
+  min-width: 100% !important;
   height: 100%;
 }
-#container-1 {
-  /* width: -webkit-fill-available !important; */
+/* #container-1 {
+  width: -webkit-fill-available !important;
+} */
+fusioncharts {
 }

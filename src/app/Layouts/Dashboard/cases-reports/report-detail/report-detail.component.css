@@ -1,6 +1,7 @@
 .detail-section {
-  width: 100%;
+  /* width: 68%; */
   /* height: 200px; */
+  width: 100%;
   border: 1px solid purple;
   background-color: white;
   margin: 8px;
