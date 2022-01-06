@@ -3,6 +3,10 @@
   margin: 5px;
   /*  margin-left: -35px; */
 }
+/* .k-button k-button-clear{
+  width: 40px;
+  size: 40px;
+} */
 .k-appbar {
   background-image: linear-gradient(to right bottom, #d0cfcdcc, #f5f5f5cc);
   background-size: 100% 100%;
