@@ -29,7 +29,7 @@ export class HeaderComponent implements OnInit {
       text: "Set Default Paste",
     },
   ];
-  kendokaAvatar = 'https://www.telerik.com/kendo-angular-ui-develop/components/navigation/appbar/assets/kendoka-angular.png';
+  kendokaAvatar = 'https://www.validchat.com/upload/photos/d-avatar.jpg';
   constructor(private router : Router) { }
 
   ngOnInit(): void {
