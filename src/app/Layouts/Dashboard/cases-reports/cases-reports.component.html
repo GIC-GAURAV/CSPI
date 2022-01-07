@@ -1,6 +1,6 @@
 <div class="row">
     <!-- width="260px" -->
-    <kendo-card  class="card-top-border">
+    <kendo-card  class="card-top-border" (click)="open()">
         <kendo-card-body class="k-hstack">
             <div class="card-content">
                 <h1 kendoCardTitle class="card-title">1080</h1>
@@ -8,7 +8,7 @@
             </div>
         </kendo-card-body>
     </kendo-card>
-    <kendo-card class="card-top-border" >
+    <kendo-card class="card-top-border" (click)="open()">
         <kendo-card-body class="k-hstack">
             <div class="card-content">
                 <h1 kendoCardTitle class="card-title">1080</h1>
@@ -16,7 +16,7 @@
             </div>
         </kendo-card-body>
     </kendo-card>
-    <kendo-card class="card-top-border">
+    <kendo-card class="card-top-border" (click)="open()">
         <kendo-card-body class="k-hstack">
             <div class="card-content">
                 <h1 kendoCardTitle class="card-title">1080</h1>
@@ -24,7 +24,7 @@
             </div>
         </kendo-card-body>
     </kendo-card>
-    <kendo-card class="card-top-border">
+    <kendo-card class="card-top-border" (click)="open()">
         <kendo-card-body class="k-hstack">
             <div class="card-content">
                 <h1 kendoCardTitle class="card-title">1080</h1>
@@ -338,3 +338,31 @@
     </kendo-card>
 </div>
 <report-detail></report-detail>
+
+
+<!-- detail pop -->
+<kendo-dialog
+    title="Please confirm"
+    *ngIf="opened"
+    (close)="close()"
+    [minWidth]="250"
+    width="70%"
+>
+<kendo-grid [data]="gridData">
+    <ng-template kendoGridToolbarTemplate>
+        <button type="button" kendoGridExcelCommand icon="file-excel">
+          Export to Excel
+        </button>
+      </ng-template>
+    <kendo-grid-column field="ProductID" title="ID"> </kendo-grid-column>
+    <kendo-grid-column field="ProductName" title="Name"> </kendo-grid-column>
+    <kendo-grid-column field="Category.CategoryName" title="Category">
+    </kendo-grid-column>
+    <kendo-grid-column field="UnitPrice" title="Price"> </kendo-grid-column>
+    <kendo-grid-excel fileName="Products.xlsx"></kendo-grid-excel>
+  </kendo-grid> 
+<!-- <kendo-dialog-actions>
+  <button kendoButton (click)="close()">No</button>
+  <button kendoButton (click)="close()" [primary]="true">Yes</button>
+</kendo-dialog-actions> -->
+</kendo-dialog>

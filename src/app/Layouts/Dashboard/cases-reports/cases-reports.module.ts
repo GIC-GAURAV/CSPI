@@ -11,8 +11,10 @@ import {TreeViewModule} from '@progress/kendo-angular-treeview'
 import {GaugesModule} from '@progress/kendo-angular-gauges'
 import {TooltipModule} from '@progress/kendo-angular-tooltip'
 import {IconsModule} from '@progress/kendo-angular-icons'
+import { DialogModule } from "@progress/kendo-angular-dialog";
+import { ButtonsModule } from "@progress/kendo-angular-buttons";
 import { FusionChartsModule } from 'angular-fusioncharts';
-
+import { GridModule, ExcelModule  } from "@progress/kendo-angular-grid";
 // Load FusionCharts
 import * as FusionCharts from 'fusioncharts';
 
@@ -40,7 +42,11 @@ FusionChartsModule.fcRoot(FusionCharts, Widgets, FusionTheme);
     GaugesModule,
     TooltipModule,
     IconsModule,
-    FusionChartsModule
+    FusionChartsModule,
+    DialogModule,
+    ButtonsModule,
+    GridModule,
+    ExcelModule
   ]
 })
 export class CasesReportsModule { }

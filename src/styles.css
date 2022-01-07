@@ -58,23 +58,23 @@ kendo-tooltip {
   border-right: 2px solid white;
 }
 
-.cases-grid::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 5px;
 }
 
 /* Track */
-.cases-grid::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 10px;
 }
 
 /* Handle */
-.cases-grid::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 10px;
 }
 
 /* Handle on hover */
-.cases-grid::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   background: #555;
 }

@@ -9,6 +9,7 @@ kendo-card {
   margin:6px 8px;
   max-width: 320px;
   width: -webkit-fill-available !important;
+  cursor: pointer;
 }
 kendo-card-header {
   padding: 1px;
