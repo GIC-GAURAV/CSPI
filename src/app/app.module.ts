@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { GridModule, PDFModule, ExcelModule, } from "@progress/kendo-angular-grid";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
@@ -15,6 +15,9 @@ import { NavigationModule } from '@progress/kendo-angular-navigation';
   ],
   imports: [
     BrowserModule,
+    GridModule,
+    PDFModule,
+    ExcelModule,
     AppRoutingModule,
     ButtonsModule,
     BrowserAnimationsModule,

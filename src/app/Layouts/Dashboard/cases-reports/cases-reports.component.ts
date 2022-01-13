@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-cases-reports',
   templateUrl: './cases-reports.component.html',
   styleUrls: ['./cases-reports.component.css']
+  
+  
 })
 export class CasesReportsComponent implements OnInit {
   public items: Array<{ url: string }> = [
