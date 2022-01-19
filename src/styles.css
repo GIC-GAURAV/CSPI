@@ -13,6 +13,36 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+.mobile-logo-img {
+  display: none;
+}
+@media (max-width: 650px) {
+  .row {
+    justify-content: center;
+  }
+  .logo-img {
+    display: none;
+  }
+  .mobile-logo-img {
+    display: inline;
+    margin: 10px 0;
+  }
+  .searchBar {
+    display: none;
+  }
+}
+@media (max-width: 1120px) {
+  .row {
+    flex-wrap: wrap;
+  }
+  .detail-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .header-section {
+    flex-direction: column;
+  }
+}
 .k-appbar {
   background-image: none !important;
   background-color: white !important;
