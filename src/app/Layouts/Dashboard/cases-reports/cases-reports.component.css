@@ -130,6 +130,16 @@ h1 {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
+.prev{
+  background-color: #f77982;
+  border-radius: 15px;
+  color: white;
+}
+.next{
+  background-color: #f77982;
+  border-radius: 15px;
+  color: white;
+}
 
 /* #cb4c7c
 #f77982 */
