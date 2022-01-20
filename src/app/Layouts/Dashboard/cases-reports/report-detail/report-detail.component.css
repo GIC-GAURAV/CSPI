@@ -63,7 +63,7 @@ kendo-card kendo-card-body {
 }
 .body-wrapper {
   overflow-y: scroll;
-  height: 130px;
+  /* height: 130px; */
 }
 table td:nth-child(1) {
   text-align: left;

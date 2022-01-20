@@ -33,310 +33,60 @@
         </kendo-card-body>
     </kendo-card>
 </div>
-
-<div class="row row2">
-    <kendo-card [ngClass]="true ? 'selected-card-border' : ''">
-        <div class="caret-up" *ngIf="true">
-            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
-        </div>
-        <kendo-card-header>
-            <h6>CASE CREATION</h6>
-        </kendo-card-header>
-        <kendo-card-body class="k-hstack">
-            <div class="card-content">
-                <h1 kendoCardTitle class="card-title light-green">1</h1>
-                <p kendoCardSubtitle class="card-subtitle">Exception</p>
-                
+<div id="wrapper">
+    <div id="carousel">
+      <div id="content">
+        <!-- <ng-container > -->
+            <div [ngClass]="data.id === selectedId ? 'selected-card-border' : ''" class="item" [id]="'id'+data.id" *ngFor="let data of cardData; let i=index" >
+                <!-- {{getId(data.id)}} -->
+                <kendo-card (click)="onSelect(data.id)">
+                    <div class="caret-up" *ngIf="data.id === selectedId">
+                        <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
+                    </div>
+                    <kendo-card-header>
+                        <h6>{{data.title | uppercase}}</h6>
+                    </kendo-card-header>
+                    <kendo-card-body class="k-hstack">
+                        <div class="card-content">
+                            <h1 kendoCardTitle class="card-title light-green">{{data.caseCount}}</h1>
+                            <p kendoCardSubtitle class="card-subtitle">{{data.type}}</p>
+                            
+                        </div>
+                    </kendo-card-body>
+                    <kendo-card-footer>
+                        <table>
+                            <tr>
+                                <td>RECEIVED</td>
+                                <td>{{data.received}}</td>
+                            </tr>
+                            <tr>
+                                <td>PROCESSED</td>
+                                <td>{{data.processed}}</td>
+                            </tr>
+                            <tr>
+                                <td>IN QUEUE</td>
+                                <td>{{data.queue}}</td>
+                            </tr>
+                        </table>
+                    </kendo-card-footer>
+                </kendo-card>
             </div>
-        </kendo-card-body>
-        <kendo-card-footer>
-            <table>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>PROCESSED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-            </table>
-        </kendo-card-footer>
-    </kendo-card>
-    <kendo-card [ngClass]="false ? 'selected-card-border' : ''">
-        <div class="caret-up" *ngIf="false">
-            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
-        </div>
-        <kendo-card-header>
-            <h6>CASE CREATION</h6>
-        </kendo-card-header>
-        <kendo-card-body class="k-hstack">
-            <div class="card-content">
-                <h1 kendoCardTitle class="card-title red">2</h1>
-                <p kendoCardSubtitle class="card-subtitle">Exception</p>
-            </div>
-        </kendo-card-body>
-        <kendo-card-footer>
-            <table>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>PROCESSED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-            </table>
-        </kendo-card-footer>
-    </kendo-card>
-    <kendo-card [ngClass]="false ? 'selected-card-border' : ''">
-        <div class="caret-up" *ngIf="false">
-            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
-        </div>
-        <kendo-card-header>
-            <h6>CASE CREATION</h6>
-        </kendo-card-header>
-        <kendo-card-body class="k-hstack">
-            <div class="card-content">
-                <h1 kendoCardTitle class="card-title light-green">3</h1>
-                <p kendoCardSubtitle class="card-subtitle">Exception</p>
-            </div>
-        </kendo-card-body>
-        <kendo-card-footer>
-            <table>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>PROCESSED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-            </table>
-        </kendo-card-footer>
-    </kendo-card>
-    <kendo-card [ngClass]="false ? 'selected-card-border' : ''">
-        <div class="caret-up" *ngIf="false">
-            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
-        </div>
-        <kendo-card-header>
-            <h6>CASE CREATION</h6>
-        </kendo-card-header>
-        <kendo-card-body class="k-hstack">
-            <div class="card-content">
-                <h1 kendoCardTitle class="card-title orange">4</h1>
-                <p kendoCardSubtitle class="card-subtitle">Exception</p>
-            </div>
-        </kendo-card-body>
-        <kendo-card-footer>
-            <table>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>PROCESSED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-            </table>
-        </kendo-card-footer>
-    </kendo-card>
-    <kendo-card [ngClass]="false ? 'selected-card-border' : ''">
-        <div class="caret-up" *ngIf="false">
-            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
-        </div>
-        <kendo-card-header>
-            <h6>CASE CREATION</h6>
-        </kendo-card-header>
-        <kendo-card-body class="k-hstack">
-            <div class="card-content">
-                <h1 kendoCardTitle class="card-title orange">5</h1>
-                <p kendoCardSubtitle class="card-subtitle">Exception</p>
-            </div>
-        </kendo-card-body>
-        <kendo-card-footer>
-            <table>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>PROCESSED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-            </table>
-        </kendo-card-footer>
-    </kendo-card>
-    <kendo-card [ngClass]="false ? 'selected-card-border' : ''">
-        <div class="caret-up" *ngIf="false">
-            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
-        </div>
-        <kendo-card-header>
-            <h6>CASE CREATION</h6>
-        </kendo-card-header>
-        <kendo-card-body class="k-hstack">
-            <div class="card-content">
-                <h1 kendoCardTitle class="card-title orange">6</h1>
-                <p kendoCardSubtitle class="card-subtitle">Exception</p>
-            </div>
-        </kendo-card-body>
-        <kendo-card-footer>
-            <table>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>PROCESSED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-            </table>
-        </kendo-card-footer>
-    </kendo-card>
-    <kendo-card [ngClass]="false ? 'selected-card-border' : ''">
-        <div class="caret-up" *ngIf="false">
-            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
-        </div>
-        <kendo-card-header>
-            <h6>CASE CREATION</h6>
-        </kendo-card-header>
-        <kendo-card-body class="k-hstack">
-            <div class="card-content">
-                <h1 kendoCardTitle class="card-title orange">7</h1>
-                <p kendoCardSubtitle class="card-subtitle">Exception</p>
-            </div>
-        </kendo-card-body>
-        <kendo-card-footer>
-            <table>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>PROCESSED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-            </table>
-        </kendo-card-footer>
-    </kendo-card>
-    <kendo-card [ngClass]="false ? 'selected-card-border' : ''">
-        <div class="caret-up" *ngIf="false">
-            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
-        </div>
-        <kendo-card-header>
-            <h6>CASE CREATION</h6>
-        </kendo-card-header>
-        <kendo-card-body class="k-hstack">
-            <div class="card-content">
-                <h1 kendoCardTitle class="card-title light-green">8</h1>
-                <p kendoCardSubtitle class="card-subtitle">Exception</p>
-            </div>
-        </kendo-card-body>
-        <kendo-card-footer>
-            <table>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>PROCESSED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-            </table>
-        </kendo-card-footer>
-    </kendo-card>
-    <kendo-card [ngClass]="false ? 'selected-card-border' : ''">
-        <div class="caret-up" *ngIf="false">
-            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
-        </div>
-        <kendo-card-header>
-            <h6>CASE CREATION</h6>
-        </kendo-card-header>
-        <kendo-card-body class="k-hstack">
-            <div class="card-content">
-                <h1 kendoCardTitle class="card-title light-green">9</h1>
-                <p kendoCardSubtitle class="card-subtitle">Exception</p>
-            </div>
-        </kendo-card-body>
-        <kendo-card-footer>
-            <table>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>PROCESSED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-            </table>
-        </kendo-card-footer>
-    </kendo-card>
-    <kendo-card  [ngClass]="false ? 'selected-card-border' : ''">
-        <div class="caret-up" *ngIf="false">
-            <span class ="k-icon k-i-kpi-status-hold k-icon-64"></span>
-        </div>
-        <kendo-card-header>
-            <h6>CASE CREATION</h6>
-        </kendo-card-header>
-        <kendo-card-body class="k-hstack">
-            <div class="card-content">
-                <h1 kendoCardTitle class="card-title light-green">10</h1>
-                <p kendoCardSubtitle class="card-subtitle">Exception</p>
-            </div>
-        </kendo-card-body>
-        <kendo-card-footer>
-            <table>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>PROCESSED</td>
-                    <td>300</td>
-                </tr>
-                <tr>
-                    <td>RECEIVED</td>
-                    <td>300</td>
-                </tr>
-            </table>
-        </kendo-card-footer>
-    </kendo-card>
-</div>
+        <!-- </ng-container> -->
+      </div>
+    </div>
+    <button id="prev">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="none" d="M0 0h24v24H0V0z" />
+        <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+      </svg>
+    </button>
+    <button id="next">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="none" d="M0 0h24v24H0V0z" />
+        <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+      </svg>
+    </button>
+  </div>
 <report-detail></report-detail>
 
 
