@@ -121,7 +121,7 @@ h1 {
 /* Carousel */
 #wrapper {
   width: 100%;
-  max-width: 1080px;
+  max-width: 1120px;
   width: -webkit-fill-available !important;
   position: relative;
   padding: 0 10px;
@@ -130,7 +130,7 @@ h1 {
 }
 @media (max-width: 1185px) {
   #wrapper {
-    max-width: 936px;
+    max-width: 956px;
   }
   #prev {
     left: -55px !important;
