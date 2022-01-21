@@ -57,7 +57,7 @@ kendo-card-header h6 {
   /* justify-content: center; */
   /* background-color: #f2f2f2; */
   padding: 5px;
-  margin: 0;
+  margin: 0px;
   box-sizing: border-box;
 }
 h1 {
@@ -257,7 +257,7 @@ h1 {
 
 #content {
   display: grid;
-  grid-gap: 16px;
+  grid-gap: 25px;
   grid-auto-flow: column;
   margin: auto;
   box-sizing: border-box;
