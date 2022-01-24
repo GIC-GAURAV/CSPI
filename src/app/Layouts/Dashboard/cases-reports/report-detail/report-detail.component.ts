@@ -37,14 +37,47 @@ export class ReportDetailComponent implements OnInit {
       color : "#027515"
     }
   ]
-  public value1 = 30;
-  public value2 = 40;
-  public value3 = 50;
-  public value4 = 60;
-  public value5 = 70;
-  public value6 = 80;
-  public value7 = 70;
-  public value8 = 80;
+
+  gaugeData = [
+    {
+      "value" : 90,
+      "label" : "Requested Id Generated",
+      
+    },
+    {
+      "value" : 75,
+      "label" : "Requested Validation started"
+    }
+    ,
+    {
+      "value" : 60,
+      "label" : "Requested Validated"
+    }
+    ,
+    {
+      "value" : 45,
+      "label" : "Document Conversion Started"
+    },
+    {
+      "value" : 30,
+      "label" : "Document Conversion Completed",
+      "notification" : "+9"
+    },
+    {
+      "value" : 20,
+      "label" : "Request sent to l3"
+    },
+    {
+      "value" : 90,
+      "label" : "Request successful"
+    },
+    {
+      "value" : 60,
+      "label" : "CRN Generated"
+    },
+  
+
+  ]
   public rangeSize = 10
   public rangePlaceholderColor = ""
 

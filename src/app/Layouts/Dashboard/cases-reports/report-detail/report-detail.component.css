@@ -4,58 +4,54 @@
   width: 100%;
   border: 1px solid purple;
   background-color: white;
-  margin: -13px;
+  /* margin: -13px; */
   margin-bottom: 0;
   display: flex;
 }
-kendo-card-header {
+.report_card_header {
   width: 100%;
   padding-bottom: 0;
 }
 .header-section {
   padding: 6px;
+  margin-bottom: 10px;
   display: flex;
+  overflow: hidden;
 }
-kendo-card {
+.report_card {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   border-radius: 0;
   border: none;
   box-shadow: 1px 0px 10px -5px gray;
-  margin: 10px;
-  width: -webkit-fill-available !important;
+  box-sizing: border-box;
+  padding: 10px;
 }
-kendo-card kendo-card-body {
+.report_card .report_card_body {
   text-align: left !important;
 }
-.detail-section kendo-card {
-  flex-basis: 100%;
+.detail-section .report_card {
   border: 1px solid rgb(207, 202, 202);
   box-shadow: none;
 }
-.detail-section kendo-card:nth-child(2) {
-  flex-basis: 400px;
+.detail-section .report_card:nth-child(2) {
   border: none;
 }
 .row {
   display: flex;
-  /* flex-wrap: wrap; */
-  /* justify-content: center; */
-  /* background-color: #f2f2f2; */
   padding: 5px;
   margin: 0;
   box-sizing: border-box;
 }
 
 .k-gauge {
-  height: 80px !important;
-  width: 80px !important;
-  margin: 5px;
+  height: 85px !important;
+  width: 85px !important;
 }
 .gaurge-wraper {
   text-align: center;
+  position: relative;
 }
 .gaurge-wraper h6 {
   font-weight: bold;
@@ -102,4 +98,38 @@ table td:nth-child(2) {
 
 .raphael-group-13-caption {
   display: none;
+}
+
+.report_container {
+  font-size: 1rem;
+  box-sizing: border-box;
+  padding: 20px 0;
+  grid-template-rows: auto 1fr; /* NEW */
+}
+
+.report_row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 100px));
+  grid-gap: 10px;
+  justify-content: center;
+}
+
+.report_row .cols {
+  text-align: center;
+  background: #fff;
+}
+
+.notification {
+  position: absolute;
+  background-color: red;
+  color: white;
+  right: 10px;
+  top: 5px;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

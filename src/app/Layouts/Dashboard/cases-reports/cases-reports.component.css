@@ -66,20 +66,7 @@ kendo-card-header h6 {
 h1 {
   margin: 0;
 }
-#wrapper kendo-card {
-  /* max-width: 180px !important; */
-  margin: 0;
-}
-#wrapper kendo-card .card-content h1 {
-  font-weight: 500;
-}
-#wrapper .card-title {
-  font-size: 35px;
-}
-#wrapper kendo-card kendo-card-body {
-  padding: 5px 10px;
-  position: relative;
-}
+
 .caret-up {
   position: absolute;
   bottom: -33px;
@@ -89,25 +76,6 @@ h1 {
   color: #a30069;
 }
 
-#wrapper .k-card-footer {
-  padding: 5px 0 !important;
-  border-style: none;
-  background-color: #f6f6f6;
-  width: inherit;
-}
-#wrapper .k-card-footer table {
-  margin: 0 auto;
-}
-#wrapper .k-card-footer table td {
-  font-size: 9px;
-}
-#wrapper .k-card-footer table tr {
-  line-height: 0.8;
-}
-#wrapper .k-card-footer table td:nth-child(2) {
-  font-size: 11px;
-  font-weight: bold;
-}
 .orange {
   color: #fb7c06 !important;
 }
@@ -124,107 +92,15 @@ h1 {
 /* Carousel */
 #wrapper {
   width: 100%;
-  max-width: 1120px;
-  width: -webkit-fill-available !important;
   position: relative;
   padding: 0 10px;
   margin: auto;
-  height: 188px !important;
-}
-@media (max-width: 1185px) {
-  #wrapper {
-    max-width: 956px;
-  }
-  #prev {
-    left: -55px !important;
-  }
-  #next {
-    right: -55px !important;
-  }
-}
-@media (max-width: 1085px) {
-  #wrapper {
-    max-width: 800px;
-  }
-  #prev {
-    left: -55px !important;
-  }
-  #next {
-    right: -55px !important;
-  }
-}
-@media (max-width: 945px) {
-  #wrapper {
-    max-width: 664px;
-  }
-  #prev {
-    left: -55px !important;
-  }
-  #next {
-    right: -55px !important;
-  }
-}
-@media (max-width: 845px) {
-  #wrapper {
-    max-width: 528px;
-  }
-  #prev {
-    left: -50px !important;
-  }
-  #next {
-    right: -50px !important;
-  }
-}
-@media (max-width: 645px) {
-  #wrapper {
-    max-width: 375px;
-  }
-  #prev {
-    left: -35px !important;
-  }
-  #next {
-    right: -35px !important;
-  }
-}
-@media (max-width: 480px) {
-  #wrapper {
-    max-width: 256px;
-  }
-  #prev {
-    left: -28px !important;
-  }
-  #next {
-    right: -28px !important;
-  }
-}
-@media (max-width: 360px) {
-  #prev {
-    left: -20px !important;
-  }
-  #next {
-    right: -20px !important;
-  }
-}
-@media (max-width: 330px) {
-  #prev {
-    left: -5px !important;
-  }
-  #next {
-    right: -5px !important;
-  }
-  #wrapper {
-    max-width: 223px;
-  }
-  #content {
-    grid-gap: 8px !important;
-  }
 }
 
 #carousel {
   overflow: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  height: 100%;
 }
 
 #carousel::-webkit-scrollbar {

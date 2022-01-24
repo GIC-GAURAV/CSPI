@@ -1,7 +1,7 @@
 <div class="row">
     <div class="detail-section">
-        <kendo-card>
-            <kendo-card-header>
+        <div class="report_card w-100">
+            <div class="report_card_header">
                 <div class="header-section">
                     <div class="header-section-left">
                         <div class="date-dropdown">
@@ -21,8 +21,8 @@
                        ></fusioncharts>
                     </div>
                 </div>
-            </kendo-card-header>
-            <kendo-card-body>
+            </div>
+            <div class="report_card_body w-100">
                 <ng-template #template let-anchor style="background-color : red;">
                     <h5>Document Converted Completed</h5>
                     <table>
@@ -40,101 +40,28 @@
                         <tr>
                     </table>
                   </ng-template>
-                <div class="row">
-                    <div class="gaurge-wraper" kendoTooltip [tooltipTemplate]="template" filter="div">
-                        <kendo-circulargauge [value]="value1" >
-                            <kendo-circulargauge-scale
-                                [rangeSize]="rangeSize">
-                                <ng-template kendoCircularGaugeCenterTemplate let-value="value">
-                                    {{ value }}
-                                  </ng-template>
-                            </kendo-circulargauge-scale>                   
-                        </kendo-circulargauge>
-                        <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
+                  <div class="report_container">
+                    <div class="report_row">
+                        <div *ngFor="let gauge of gaugeData;" class="gaurge-wraper cols" kendoTooltip [tooltipTemplate]="template" filter="div">
+                            <kendo-circulargauge [value]="gauge.value" [colors]="colors">
+                                <kendo-circulargauge-scale
+                                    [rangeSize]="rangeSize">
+                                    <ng-template kendoCircularGaugeCenterTemplate let-value="value">
+                                        {{ value }}
+                                      </ng-template>
+                                </kendo-circulargauge-scale>                 
+                            </kendo-circulargauge>
+                            <div class="notification" *ngIf="gauge.notification">
+                               {{gauge.notification}}
+                            </div>
+                            <h6 class="remove-margin">{{gauge.label | uppercase}}</h6>
+                        </div> 
                     </div>
-                    <div class="gaurge-wraper" kendoTooltip [tooltipTemplate]="template" filter="div">
-                        <kendo-circulargauge [value]="value2" [colors]="colors">
-                            <kendo-circulargauge-scale
-                                [rangeSize]="rangeSize">
-                                <ng-template kendoCircularGaugeCenterTemplate let-value="value">
-                                    {{ value }}
-                                  </ng-template>
-                            </kendo-circulargauge-scale>                   
-                        </kendo-circulargauge>
-                        <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
-                    </div>
-                    <div class="gaurge-wraper" kendoTooltip [tooltipTemplate]="template" filter="div">
-                        <kendo-circulargauge [value]="value3" [colors]="colors">
-                            <kendo-circulargauge-scale
-                                [rangeSize]="rangeSize">
-                                <ng-template kendoCircularGaugeCenterTemplate let-value="value">
-                                    {{ value }}
-                                  </ng-template>
-                            </kendo-circulargauge-scale>                   
-                        </kendo-circulargauge>
-                        <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
-                    </div>
-                    <div class="gaurge-wraper" kendoTooltip [tooltipTemplate]="template" filter="div">
-                        <kendo-circulargauge [value]="value4" [colors]="colors">
-                            <kendo-circulargauge-scale
-                                [rangeSize]="rangeSize">
-                                <ng-template kendoCircularGaugeCenterTemplate let-value="value">
-                                    {{ value }}
-                                  </ng-template>
-                            </kendo-circulargauge-scale>                   
-                        </kendo-circulargauge>
-                        <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
-                    </div>
-                    <div class="gaurge-wraper" kendoTooltip [tooltipTemplate]="template" filter="div">
-                        <kendo-circulargauge [value]="value5"[colors]="colors">
-                            <kendo-circulargauge-scale
-                                [rangeSize]="rangeSize">
-                                <ng-template kendoCircularGaugeCenterTemplate let-value="value">
-                                    {{ value }}
-                                  </ng-template>
-                            </kendo-circulargauge-scale>                   
-                        </kendo-circulargauge>
-                        <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
-                    </div>
-                    <div class="gaurge-wraper" kendoTooltip [tooltipTemplate]="template" filter="div">
-                        <kendo-circulargauge [value]="value6" [colors]="colors">
-                            <kendo-circulargauge-scale
-                                [rangeSize]="rangeSize">
-                                <ng-template kendoCircularGaugeCenterTemplate let-value="value">
-                                    {{ value }}
-                                  </ng-template>
-                            </kendo-circulargauge-scale>                   
-                        </kendo-circulargauge>
-                        <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
-                    </div>
-                    <div class="gaurge-wraper" kendoTooltip [tooltipTemplate]="template" filter="div">
-                        <kendo-circulargauge [value]="value7" [colors]="colors">
-                            <kendo-circulargauge-scale
-                                [rangeSize]="rangeSize">
-                                <ng-template kendoCircularGaugeCenterTemplate let-value="value">
-                                    {{ value }}
-                                  </ng-template>
-                            </kendo-circulargauge-scale>                   
-                        </kendo-circulargauge>
-                        <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
-                    </div>
-                    <div class="gaurge-wraper" kendoTooltip [tooltipTemplate]="template" filter="div">
-                        <kendo-circulargauge [value]="value8" [colors]="colors">
-                            <kendo-circulargauge-scale
-                                [rangeSize]="rangeSize">
-                                <ng-template kendoCircularGaugeCenterTemplate let-value="value">
-                                    {{ value }}
-                                  </ng-template>
-                            </kendo-circulargauge-scale>                   
-                        </kendo-circulargauge>
-                        <h6 class="remove-margin">REQUESTED ID GENERATED</h6>
-                    </div>
-                    
-                </div>
-            </kendo-card-body>
-        </kendo-card>
-        <kendo-card>
-            <kendo-card-header>
+                  </div>
+            </div>
+        </div>
+        <div class="report_card">
+            <div class="report_card_header">
                 <div class="header-section">
                     <div class="header-section-left">
                         <div class="date-dropdown">
@@ -145,8 +72,8 @@
                         <h5 class="remove-margin" style="margin-top: 8px;">TODAY, DECEMBER 29, 2021</h5>
                     </div>
                 </div>
-            </kendo-card-header>
-            <kendo-card-body style="width : 100%">
+            </div>
+            <div class="report_card_body" style="width : 100%">
                <div class="body-wrapper">
                    <table style="width : 100%">
                        <tr>
@@ -179,7 +106,7 @@
                     </tr>
                    </table>
                </div>
-            </kendo-card-body>
-        </kendo-card>
+            </div>
+        </div>
     </div>
 </div>

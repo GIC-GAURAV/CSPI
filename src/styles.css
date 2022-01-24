@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /*@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap');*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,100;1,300;1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,100;1,300;1,500&display=swap");
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -111,55 +111,55 @@ kendo-tooltip {
   background: #555;
 }
 
-.dashboard_container{
+.dashboard_container {
   font-size: 1rem;
   box-sizing: border-box;
   padding: 20px 0;
   grid-template-rows: auto 1fr; /* NEW */
 }
 
-.header_row{
+.header_row {
   display: grid;
-  grid-template-columns:  repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
 }
 
-.header_row .cols{
-text-align: center;
-background: #fff;
+.header_row .cols {
+  text-align: center;
+  background: #fff;
 }
 
-.slider-row{
+.slider-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-gap: 5px;
 }
 
-.slider-row .cols{
-  background-image:linear-gradient(45deg, #cc4c7d00, #f96f8400);
+.slider-row .cols {
+  background-image: linear-gradient(45deg, #cc4c7d00, #f96f8400);
   box-sizing: border-box;
   padding: 10px;
- /*  -webkit-transition: all 2s ease-out;
+  /*  -webkit-transition: all 2s ease-out;
   -moz-transition: all 2s ease-out;
   -o-transition: all 2s ease-out; */
   transition: all 2s ease-out;
-
 }
-.slider-row .cols:hover{
+.slider-row .cols:hover {
   background-image: linear-gradient(45deg, #cc4c7d, #f96f84);
   box-sizing: border-box;
   padding: 10px;
-
 }
-.stage_count_card{
+.stage_count_card {
   background: #fff;
-  height: 220px;display: flex;
+  height: 220px;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-transform:uppercase ;
-  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  text-transform: uppercase;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
-.stage_count_card h1{
+.stage_count_card h1 {
   background: rgb(110, 110, 110);
   font-size: 1rem;
   text-align: center;
@@ -169,85 +169,87 @@ background: #fff;
   height: 1.8rem;
   align-items: center;
   justify-content: center;
-
 }
-.stage_count{
+.stage_count {
   font-size: 4rem;
   font-weight: 900;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.stage_count div{
+.stage_count div {
   flex: 1 1 100%;
   text-align: center;
 }
-.stage_count .text_content{
+.stage_count .text_content {
   font-size: 1rem;
   font-weight: 500;
 }
-.stage_count_card .footer_box{
+.stage_count_card .footer_box {
   margin: 5px;
   background: #f2f2f2;
   text-transform: uppercase;
   padding: 5px;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
-.stage_count_card .footer_box .row{
+.stage_count_card .footer_box .row {
   display: flex;
   justify-content: space-between;
   padding: 0;
 }
-.col{
+.col {
   flex: 1 1 auto;
   padding: 2px;
   box-sizing: border-box;
 }
-.p-1{
+.p-1 {
   padding: 1rem;
 }
-.font-4{
+.font-4 {
   font-size: 4rem;
 }
-.thin-font{
+.thin-font {
   font-weight: 100;
 }
-.mb-2{
+.mb-2 {
   margin-bottom: 20px;
 }
-.ml-2{
+.ml-2 {
   margin-left: 20px;
 }
-.mr-2{
+.mr-2 {
   margin-right: 20px;
 }
-.mlr-2{
+.mlr-2 {
   margin: 0 20px;
 }
-strong{
+strong {
   font-weight: 500;
 }
-.b{
+.b {
   font-weight: 500;
 }
 
-.col-1x{
-  flex: 1
+.col-1x {
+  flex: 1;
 }
-.col-2x{
-  flex: 2
+.col-2x {
+  flex: 2;
 }
-.col-3x{
-  flex: 3
+.col-3x {
+  flex: 3;
 }
-.col-4x{
-  flex: 4
+.col-4x {
+  flex: 4;
 }
-.col-5x{
-  flex: 5
+.col-5x {
+  flex: 5;
 }
-.col-6x{
-  flex: 6
+.col-6x {
+  flex: 6;
 }
 
-
+/* width */
+.w-100 {
+  width: 100% !important;
+}
