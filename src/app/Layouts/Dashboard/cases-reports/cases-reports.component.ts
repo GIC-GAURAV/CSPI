@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/Services/common.service';
 
 @Component({
   selector: 'app-cases-reports',
@@ -6,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cases-reports.component.css']
 })
 export class CasesReportsComponent implements OnInit {
+
+  requestReceived = '';
+  requestProcessed = '';
+  requestInQueue = '';
+  exceptionCount = '';
+
   public opened = false;
   carousel : any
   content : any
@@ -57,8 +64,8 @@ export class CasesReportsComponent implements OnInit {
   public cardData : any = [
     {
       "id" : 1,
-      "title" : "Case Creation",
-      "caseCount" : 1,
+      "title" : "Data Ingestion",
+      "caseCount" : 0,
       "type" : "Exception",
       "received" : 300,
       "processed" : 300,
@@ -67,7 +74,7 @@ export class CasesReportsComponent implements OnInit {
     {
       "id" : 2,
       "title" : "Case Creation",
-      "caseCount" : 2,
+      "caseCount" : 1,
       "type" : "Exception",
       "received" : 300,
       "processed" : 300,
@@ -75,8 +82,8 @@ export class CasesReportsComponent implements OnInit {
     },
     {
       "id" : 3,
-      "title" : "Case Creation",
-      "caseCount" : 3,
+      "title" : "Data Entry",
+      "caseCount" : 2,
       "type" : "Exception",
       "received" : 300,
       "processed" : 300,
@@ -84,8 +91,8 @@ export class CasesReportsComponent implements OnInit {
     },
     {
       "id" : 4,
-      "title" : "Case Creation",
-      "caseCount" : 4,
+      "title" : "Doc Validation",
+      "caseCount" : 3,
       "type" : "Exception",
       "received" : 300,
       "processed" : 300,
@@ -93,8 +100,8 @@ export class CasesReportsComponent implements OnInit {
     },
     {
       "id" : 5,
-      "title" : "Case Creation",
-      "caseCount" : 5,
+      "title" : "Case Level MI",
+      "caseCount" : 4,
       "type" : "Exception",
       "received" : 300,
       "processed" : 300,
@@ -102,8 +109,8 @@ export class CasesReportsComponent implements OnInit {
     },
     {
       "id" : 6,
-      "title" : "Case Creation",
-      "caseCount" : 6,
+      "title" : "Assisted QC",
+      "caseCount" : 5,
       "type" : "Exception",
       "received" : 300,
       "processed" : 300,
@@ -111,8 +118,8 @@ export class CasesReportsComponent implements OnInit {
     },
     {
       "id" : 7,
-      "title" : "Case Creation",
-      "caseCount" : 7,
+      "title" : "Scoping",
+      "caseCount" : 6,
       "type" : "Exception",
       "received" : 300,
       "processed" : 300,
@@ -120,8 +127,8 @@ export class CasesReportsComponent implements OnInit {
     },
     {
       "id" : 8,
-      "title" : "Case Creation",
-      "caseCount" : 8,
+      "title" : "Base EJC",
+      "caseCount" : 7,
       "type" : "Exception",
       "received" : 300,
       "processed" : 300,
@@ -129,8 +136,8 @@ export class CasesReportsComponent implements OnInit {
     },
     {
       "id" : 9,
-      "title" : "Case Creation",
-      "caseCount" : 9,
+      "title" : "Eternal MRL",
+      "caseCount" : 8,
       "type" : "Exception",
       "received" : 300,
       "processed" : 300,
@@ -138,54 +145,21 @@ export class CasesReportsComponent implements OnInit {
     },
     {
       "id" : 10,
-      "title" : "Case Creation",
-      "caseCount" : 10,
+      "title" : "Internal MRL",
+      "caseCount" : 9,
       "type" : "Exception",
       "received" : 300,
       "processed" : 300,
       "queue" : 1
     },
-    {
-      "id" : 11,
-      "title" : "Case Creation",
-      "caseCount" : 11,
-      "type" : "Exception",
-      "received" : 300,
-      "processed" : 300,
-      "queue" : 1
-    },
-    {
-      "id" : 12,
-      "title" : "Case Creation",
-      "caseCount" : 12,
-      "type" : "Exception",
-      "received" : 300,
-      "processed" : 300,
-      "queue" : 1
-    },
-    {
-      "id" : 13,
-      "title" : "Case Creation",
-      "caseCount" : 13,
-      "type" : "Exception",
-      "received" : 300,
-      "processed" : 300,
-      "queue" : 1
-    },
-    {
-      "id" : 14,
-      "title" : "Case Creation",
-      "caseCount" : 14,
-      "type" : "Exception",
-      "received" : 300,
-      "processed" : 300,
-      "queue" : 1
-    },
+
+
   ]
-  constructor() { }
+  constructor(private _common: CommonService) { }
 
   ngOnInit(): void {
-    this.slider();
+    //this.slider();
+   this.getActivityData('', 'completed', new Date().toISOString())
   }
 
   onSelect(id : any){
@@ -208,7 +182,7 @@ export class CasesReportsComponent implements OnInit {
     this.next = document.getElementById("next")
     this.prev = document.getElementById("prev")
     this.item = document.getElementById('id1')
-    
+
     this.next.addEventListener("click", (e :  any) => {
       this.carousel.scrollBy(width + gap, 0);
     if (this.carousel.scrollWidth !== 0) {
@@ -230,6 +204,24 @@ export class CasesReportsComponent implements OnInit {
 
   let width = this.carousel.offsetWidth;
   window.addEventListener("resize", (e) => (width = this.carousel.offsetWidth));
+  }
+
+  getColorClass(val: string){
+    const value = parseInt(val);
+    if(value === 0 ){
+      return 'light-green'
+    } else if( value > 0 && value < 4){
+      return "orange"
+    }
+    return "red"
+  }
+
+  getActivityData(workerName: string, status: string, time: string){
+
+    this._common.getCountforActivity(workerName, status, time).subscribe(data=>{
+      console.log(data)
+      this.requestReceived = data.response;
+    })
   }
 }
 

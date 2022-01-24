@@ -1,4 +1,4 @@
-kendo-card {
+/* kendo-card.count_box {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,19 +20,30 @@ kendo-card-header {
   padding: 1px;
   width: 100%;
   text-align: center;
-  background: gray;
+  background: #fff;
   color: white;
+  box-shadow: 1px 0px 10px -5px gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+
+  margin: 6px 8px;
 }
 kendo-card-header h6 {
   margin: 5px 0;
   letter-spacing: 1px;
   font-size: 10px;
-}
+}*/
 .card-top-border {
   border-top: 7px solid transparent;
-  width: -webkit-fill-available;
+  background: #fff;
   border-image: linear-gradient(45deg, #cb4c7c, #f77982);
   border-image-slice: 1;
+  box-shadow: 1px 0px 10px -5px gray;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .selected-card-border {
@@ -51,15 +62,7 @@ kendo-card-header h6 {
   margin: 0;
   text-align: center;
 }
-.row {
-  display: flex;
-  /* flex-wrap: wrap; */
-  /* justify-content: center; */
-  /* background-color: #f2f2f2; */
-  padding: 5px;
-  margin: 0px;
-  box-sizing: border-box;
-}
+
 h1 {
   margin: 0;
 }
@@ -68,7 +71,7 @@ h1 {
   margin: 0;
 }
 #wrapper kendo-card .card-content h1 {
-  font-weight: bold;
+  font-weight: 500;
 }
 #wrapper .card-title {
   font-size: 35px;
