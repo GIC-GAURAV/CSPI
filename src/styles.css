@@ -155,13 +155,15 @@ kendo-tooltip {
 }
 .report_card {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 0;
-  border: none;
-  box-shadow: 1px 0px 10px -5px gray;
-  box-sizing: border-box;
-  padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0;
+    border: none;
+    box-shadow: 1px 0px 10px -5px grey;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: inherit;
+    font-size: initial;
 }
 .report_card .report_card_body {
   text-align: left !important;

@@ -14,8 +14,10 @@
 }
 
 .detail-section .report_card {
-  border: 1px solid rgb(207, 202, 202);
-  box-shadow: none;
+    border: 1px solid rgb(203 199 199);
+    box-shadow: gray;
+    margin: 11px 12px;
+    max-width: -webkit-fill-available;
 }
 .detail-section .report_card:nth-child(2) {
   border: none;
