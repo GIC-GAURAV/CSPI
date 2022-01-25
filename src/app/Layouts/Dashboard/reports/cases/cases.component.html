@@ -1,7 +1,7 @@
 <div class="row">
     <div class="detail-section">
-        <kendo-card>
-            <kendo-card-header>
+        <div class="report_card">
+            <div class="report_card_header">
                 <div class="header-section">
                     <div class="header-section-left">
                         <div class="date-dropdown">
@@ -16,8 +16,8 @@
                             [dataSource]="dataSource"></fusioncharts>
                     </div>
                 </div>
-            </kendo-card-header>
-            <kendo-card-body>
+            </div>
+            <div class="report_card_body">
                 <kendo-grid [data]="gridData" class="cases-grid">
                     <kendo-grid-column field="CaseId" title="Case Id"> </kendo-grid-column>
                     <kendo-grid-column field="StartStage" title="Start Stage"> </kendo-grid-column>
@@ -27,10 +27,10 @@
                     <kendo-grid-column field="CurrentStatus" title="Current Status"> </kendo-grid-column>
                     <kendo-grid-column field="CurrentDescription" title="Current Description"> </kendo-grid-column>
                 </kendo-grid>
-            </kendo-card-body>
-        </kendo-card>
-        <kendo-card>
-            <kendo-card-header>
+            </div>
+        </div>
+        <div class="report_card">
+            <div class="report_card_header">
                 <div class="header-section">
                     <div class="header-section-left">
                         <div class="date-dropdown">
@@ -41,8 +41,8 @@
                         <h5 class="remove-margin" style="margin-top: 8px;">TODAY, DECEMBER 29, 2021</h5>
                     </div>
                 </div>
-            </kendo-card-header>
-            <kendo-card-body style="width : 100%">
+            </div>
+            <div class="report_card_body" style="width : 100%">
                 <div class="body-wrapper">
                     <table style="width : 100%">
                         <tr>
@@ -89,7 +89,7 @@
                         </tr>
                     </table>
                 </div>
-            </kendo-card-body>
-        </kendo-card>
+            </div>
+        </div>
     </div>
 </div>
