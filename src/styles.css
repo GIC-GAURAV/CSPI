@@ -150,7 +150,7 @@ kendo-tooltip {
 
 .slider-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 5px;
 }
 .report_card {
@@ -213,7 +213,7 @@ kendo-tooltip {
 }
 .stage_count_card h1 {
   background: rgb(110, 110, 110);
-  font-size: 1rem;
+  font-size: .8rem;
   text-align: center;
   color: #fff;
   font-weight: 500;

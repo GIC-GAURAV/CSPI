@@ -3,25 +3,25 @@
   <div class="header_row mb-2">
     <div class="cols card-top-border">
       <div (click)="open()" class="p-1">
-        <h1 kendoCardTitle class="font-4 thin-font">1080</h1>
+        <h1 kendoCardTitle class="font-4 thin-font">{{requestReceived}}</h1>
         <p kendoCardSubtitle class="card-subtitle">REQUESTS RECEIVED</p>
       </div>
     </div>
     <div class="cols card-top-border">
       <div (click)="open()" class="p-1">
-        <h1 kendoCardTitle class="font-4 thin-font">1080</h1>
+        <h1 kendoCardTitle class="font-4 thin-font">{{requestProcessed}}</h1>
         <p kendoCardSubtitle class="card-subtitle">REQUESTS PROCESSED</p>
       </div>
     </div>
     <div class="cols card-top-border">
       <div (click)="open()" class="p-1">
-        <h1 kendoCardTitle class="font-4 thin-font">1080</h1>
+        <h1 kendoCardTitle class="font-4 thin-font">{{requestInQueue}}</h1>
         <p kendoCardSubtitle class="card-subtitle">REQUESTS IN QUEUE</p>
       </div>
     </div>
     <div class="cols card-top-border">
       <div (click)="open()" class="p-1">
-        <h1 kendoCardTitle class="font-4 thin-font">1080</h1>
+        <h1 kendoCardTitle class="font-4 thin-font">{{exceptionCount}}</h1>
         <p kendoCardSubtitle class="card-subtitle">EXCEPTIONS RECEIVED</p>
       </div>
     </div>
@@ -31,23 +31,23 @@
   <div class="slider-row mb-2">
     <div class="cols" *ngFor="let data of cardData; let i=index">
       <div class="stage_count_card">
-        <h1>{{data.title }}</h1>
+        <h1>{{data.workerName }}</h1>
         <div class="stage_count">
-         <div [ngClass]="getColorClass(data.caseCount)">{{data.caseCount}}</div>
-          <div class="text_content">{{data.type}}</div>
+         <div [ngClass]="getColorClass(data.requestFailed)">{{data.requestFailed}}</div>
+          <div class="text_content">EXCEPTIONS</div>
         </div>
         <div class="footer_box">
           <div class="row">
             <div class="col col-3x">Received</div>
-            <div class="col col-1x b">300</div>
+            <div class="col col-1x b">{{data.requestReceived}}</div>
           </div>
           <div class="row">
             <div class="col col-3x">Processed</div>
-            <div class="col col-1x b">300</div>
+            <div class="col col-1x b">{{data.requestProcessed}}</div>
           </div>
           <div class="row">
             <div class="col col-3x">In Queue</div>
-            <div class="col col-1x b">0</div>
+            <div class="col col-1x b">{{data.requestInQueue}}</div>
           </div>
         </div>
       </div>

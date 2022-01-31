@@ -1,25 +1,31 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
-import { ActivityCount } from '../common/dataModel';
+import { map } from 'rxjs/operators';
+
+import { CountRequestModel, CountResponse, CountResponseModel, WorkerLevelReqCountModel, WorkerLevelResponseModel } from '../common/dataModel';
+import { AppConfig } from './app-config.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CommonService {
-  apiURL = 'http://10.2.60.122:8097/api/india/';
-  constructor(private _http: HttpClient) {}
+  api_url= '';
 
-  getCountforActivity(workerName: string, status: string, time: string): Observable<ActivityCount> {
-    // alert('1')
-    const obj = {
-      activityWorkerName: workerName,
-      status: status,
-      requestTimestamp: time,
-    };
-    return this._http.post<ActivityCount>(
-      `${this.apiURL}get-request-received-count`, obj
-    );
+  //apiURL = 'http://10.2.60.122:8097/api/india/';
+  constructor(private _http: HttpClient, public config: AppConfig) {
+    this.api_url = config.apiUrl;
+  }
+
+  getCountforActivity(obj: CountRequestModel): Observable<CountResponseModel> {
+    return this._http.post<CountResponseModel>(
+      `${this.api_url}get-overall-count`, obj
+    )
+  }
+
+  fetchWorkerLevelData(obj:WorkerLevelReqCountModel): Observable<WorkerLevelResponseModel>{
+    return this._http.post<WorkerLevelResponseModel>(
+      `${this.api_url}get-worker-level-name-count`, obj
+    )
   }
 }
