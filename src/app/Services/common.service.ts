@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { CountRequestModel, CountResponse, CountResponseModel, WorkerLevelReqCountModel, WorkerLevelResponseModel } from '../common/dataModel';
@@ -16,6 +16,8 @@ export class CommonService {
   constructor(private _http: HttpClient, public config: AppConfig) {
     this.api_url = config.apiUrl;
   }
+  
+  contentWidth:any = new BehaviorSubject(null)
 
   getCountforActivity(obj: CountRequestModel): Observable<CountResponseModel> {
     return this._http.post<CountResponseModel>(

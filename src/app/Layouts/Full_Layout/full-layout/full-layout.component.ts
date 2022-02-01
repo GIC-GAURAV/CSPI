@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, DoCheck, ElementRef, OnChanges, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { DrawerComponent, DrawerItem, DrawerSelectEvent } from '@progress/kendo-angular-layout';
 import { CommonService } from 'src/app/Services/common.service';
@@ -17,19 +17,24 @@ import { CommonService } from 'src/app/Services/common.service';
   ],
   encapsulation: ViewEncapsulation.None,
 })
-export class FullLayoutComponent implements OnInit {
+export class FullLayoutComponent implements OnInit ,DoCheck {
   public selected = "Inbox";
+
   public items: Array<any> = [];
   constructor(private router: Router, private commonSrv : CommonService) {
       this.items = this.mapItems(router.config);
       this.items[0].selected = true;
       console.log("Route : ",this.items, typeof(this.items))
   }
+ 
+  
 
   ngAfterViewInit() {
     var drawerWidth = document.getElementById('drawerWidth')?.clientWidth
     console.log("Width : ", drawerWidth)
+    
   }
+
   // public items: Array<DrawerItem> = [
   //   { text: "Inbox", icon: "k-i-inbox", selected: true, },
   //   // { separator: true },
@@ -41,6 +46,13 @@ export class FullLayoutComponent implements OnInit {
   //   { text: "Setting", icon: "k-i-cog" },
   // ];
   ngOnInit(): void {
+    const width = document.getElementById('drawerContent')?.style
+  }
+  ngDoCheck(){
+    var width = document.getElementById('drawerContent')?.offsetWidth;//includes margin,border,padding
+    // var height = document.getElementById('drawerContent')?. offsetHeight;
+    console.log(width, )
+    this.commonSrv.contentWidth.next(width)
   }
   toggleDrawer(event : any, drawer: DrawerComponent) {
     console.log("Working...", event)

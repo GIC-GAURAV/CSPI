@@ -28,33 +28,69 @@
   </div>
   <!--SECTION 1-->
   <!--SECTION 2-->
-  <div class="slider-row mb-2">
-    <div class="cols" *ngFor="let data of cardData; let i=index">
-      <div class="stage_count_card">
-        <h1>{{data.workerName }}</h1>
-        <div class="stage_count">
-         <div [ngClass]="getColorClass(data.requestFailed)">{{data.requestFailed}}</div>
-          <div class="text_content">EXCEPTIONS</div>
-        </div>
-        <div class="footer_box">
-          <div class="row">
-            <div class="col col-3x">Received</div>
-            <div class="col col-1x b">{{data.requestReceived}}</div>
-          </div>
-          <div class="row">
-            <div class="col col-3x">Processed</div>
-            <div class="col col-1x b">{{data.requestProcessed}}</div>
-          </div>
-          <div class="row">
-            <div class="col col-3x">In Queue</div>
-            <div class="col col-1x b">{{data.requestInQueue}}</div>
+  <div  id="wrapper" >
+    <div id="carousel">
+      <div class="slider-row mb-2" id="content">
+        <div class="cols" *ngFor="let data of cardData; let i=index">
+          <div class="stage_count_card" >
+            <h1>{{data.workerName }}</h1>
+            <div class="stage_count">
+             <div [ngClass]="getColorClass(data.requestFailed)">{{data.requestFailed}}</div>
+              <div class="text_content">EXCEPTIONS</div>
+            </div>
+            <div class="footer_box">
+              <div class="row">
+                <div class="col col-3x">Received</div>
+                <div class="col col-1x b">{{data.requestReceived}}</div>
+              </div>
+              <div class="row">
+                <div class="col col-3x">Processed</div>
+                <div class="col col-1x b">{{data.requestProcessed}}</div>
+              </div>
+              <div class="row">
+                <div class="col col-3x">In Queue</div>
+                <div class="col col-1x b">{{data.requestInQueue}}</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+  
     </div>
-
+   
+    <button id="prev" class="btn-trans">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="none" d="M0 0h24v24H0V0z" />
+        <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+      </svg>
+    </button>
+    <button id="next" class="btn-trans">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="none" d="M0 0h24v24H0V0z" />
+        <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+      </svg>
+    </button>
   </div>
   <!--SECTION 2-->
+  <!-- <div id="wrapper">
+    <div id="carousel">
+      <div id="content">
+       <div class="item">1</div>
+       <div class="item">2</div>
+       <div class="item">3</div>
+       <div class="item">4</div>
+       <div class="item">5</div>
+       <div class="item">6</div>
+       <div class="item">7</div>
+       <div class="item">8</div>
+       <div class="item">9</div>
+       <div class="item">10</div>
+       <div class="item">11</div>
+       <div class="item">12</div>
+      </div>
+    </div>
+  
+  </div> -->
   <!--SECTION 3-->
   <report-detail></report-detail>
   <!--SECTION 3-->

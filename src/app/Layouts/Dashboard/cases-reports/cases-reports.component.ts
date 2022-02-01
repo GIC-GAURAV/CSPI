@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { CountRequestModel, WorkerLevelReqCountModel, WorkerLevelRespons } from 'src/app/common/dataModel';
 import { CommonService } from 'src/app/Services/common.service';
 
@@ -7,7 +7,7 @@ import { CommonService } from 'src/app/Services/common.service';
   templateUrl: './cases-reports.component.html',
   styleUrls: ['./cases-reports.component.css']
 })
-export class CasesReportsComponent implements OnInit {
+export class CasesReportsComponent implements OnInit ,DoCheck{
 
   requestReceived = 0;
   requestProcessed = 0;
@@ -21,6 +21,7 @@ export class CasesReportsComponent implements OnInit {
   prev: any
   item : any
   selectedId : any
+  wrapperWidth:any
   public gridData: any[] = [
     {
       ProductID: 1,
@@ -66,11 +67,18 @@ export class CasesReportsComponent implements OnInit {
   constructor(private _common: CommonService) { }
 
   ngOnInit(): void {
-    //this.slider();
+    this.slider();
    this.getActivityData();
    this.getWorkerLevelActivityData()
-  }
 
+  }
+  ngDoCheck(){
+this._common.contentWidth.subscribe((res:any)=>{
+
+this.wrapperWidth=res;
+console.log("====>",this.wrapperWidth)
+})
+}
   onSelect(id : any){
     this.selectedId = id
   }
@@ -84,8 +92,7 @@ export class CasesReportsComponent implements OnInit {
   }
 
   slider(){
-    const gap = 16;
-
+    const gap = 0;
     this.carousel = document.getElementById("carousel")
     this.content = document.getElementById("content")
     this.next = document.getElementById("next")
@@ -93,6 +100,7 @@ export class CasesReportsComponent implements OnInit {
     this.item = document.getElementById('id1')
 
     this.next.addEventListener("click", (e :  any) => {
+      // alert(width)
       this.carousel.scrollBy(width + gap, 0);
     if (this.carousel.scrollWidth !== 0) {
       this.prev.style.display = "flex";
