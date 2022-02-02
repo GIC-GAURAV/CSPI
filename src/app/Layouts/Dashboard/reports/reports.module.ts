@@ -23,6 +23,7 @@ import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 import { CaseDetailChartComponent } from './case-detail-chart/case-detail-chart.component';
 import { CasesComponent } from './cases/cases.component';
+import { CaseReportsComponent } from './case-reports/case-reports.component';
 
 // Add dependencies to FusionChartsModule
 FusionChartsModule.fcRoot(
@@ -35,7 +36,8 @@ FusionChartsModule.fcRoot(
     ReportsComponent,
     CaseDetailComponent,
     CaseDetailChartComponent,
-    CasesComponent
+    CasesComponent,
+    CaseReportsComponent
   ],
   imports: [
     CommonModule,
