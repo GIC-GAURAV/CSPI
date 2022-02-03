@@ -1,23 +1,60 @@
-<div class="card_wrapper" style="width: auto !important;">
-        <div class="row">
-            <div class="col col-1">
-                <h2 class="remove-margin">SELECT PARAMETER</h2>
-                <kendo-dropdownlist [data]="listItems" value="Basketball">
-                </kendo-dropdownlist>
-                <kendo-dropdownlist [data]="listItems" value="Basketball">
-                </kendo-dropdownlist>
-                <kendo-dropdownlist [data]="listItems" value="Basketball">
-                </kendo-dropdownlist>
-                <kendo-dropdownlist [data]="listItems" value="Basketball">
-                </kendo-dropdownlist>
-                <kendo-dropdownlist [data]="listItems" value="Basketball">
-                </kendo-dropdownlist>
-            </div>
-            <div class="col col-2">
-                <div class="calendar-wrapper">            
-                    <kendo-calendar type="classic"></kendo-calendar>
-                    <!-- <ejs-daterangepicker id='daterangepicker' placeholder='Select a range' [startDate]='start' [endDate]='end'></ejs-daterangepicker> -->
-                  </div>            
-            </div>
+<div class="card_wrapper" style="width: auto !important; max-height: 270px">
+  <div class="row">
+    <div class="col">
+      <h2 class="remove-margin">SELECT PARAMETER</h2>
+      <div class="searchpanel">
+        <div>
+          <kendo-combobox
+            [data]="stage"
+            placeholder="Select Stage"
+            style="width: 100%; margin-bottom: 5px"
+          >
+          </kendo-combobox>
+          <kendo-combobox
+            [data]="state"
+            placeholder="Select State"
+            style="width: 100%; margin-bottom: 5px"
+          >
+          </kendo-combobox>
+          <kendo-combobox
+            [data]="status"
+            placeholder="Select Case Status"
+            style="width: 100%; margin-bottom: 5px"
+          >
+          </kendo-combobox>
+          <kendo-combobox
+            [data]="caseId"
+            placeholder="Select Case ID"
+            style="width: 100%; margin-bottom: 5px"
+          >
+          </kendo-combobox>
+<div style="text-align: right;">
+  <kendo-buttongroup>
+              <button kendoButton icon="x">Reset</button>
+              <button kendoButton icon="tick" style="background: royalblue; color: #fff;">Submit</button>
+            </kendo-buttongroup>
+</div>
+
+
+
         </div>
+        <div>
+          <kendo-textbox
+            placeholder="Search Individual Case"
+            style="width: 100%;"
+            [(ngModel)]="searchedCase"
+            (keydown.enter)="caseSearch($event)"
+          >
+          </kendo-textbox>
+          <small>Paste Case ID and Hit Enter</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="calendar-wrapper">
+        <kendo-calendar type="classic" style="width: 100%"></kendo-calendar>
+        <!-- <ejs-daterangepicker id='daterangepicker' placeholder='Select a range' [startDate]='start' [endDate]='end'></ejs-daterangepicker> -->
+      </div>
+    </div>
+  </div>
 </div>

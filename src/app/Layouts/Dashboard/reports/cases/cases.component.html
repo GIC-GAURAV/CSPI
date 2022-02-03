@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
     <div class="detail-section">
         <div class="report_card">
             <div class="report_card_header">
@@ -92,4 +92,75 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
+<kendo-card style="width: 100%; height: 100%;">
+  <kendo-card-header style="background: purple; color: #fff"
+    ><h3>Case ID: {{ selectedCaseId }}</h3></kendo-card-header
+  >
+  <kendo-card-body >
+    <div *ngIf="steps.length">
+      <div class="grid-container">
+        <div class="panel">
+          <kendo-stepper
+            [steps]="steps"
+            stepType="label"
+            [currentStep]="steps.length"
+            orientation="vertical"
+          >
+            <ng-template kendoStepperStepTemplate let-step>
+              <div class="{{ step.status === 'failed'? 'custom-step redBg' : 'custom-step greenBg' }}">
+                <span class="{{ step.status === 'failed'? 'k-icon k-i-x' : 'k-icon k-i-tick' }}"></span>
+              </div>
+              <span
+                class="step-label"
+                style="padding-left: 20px; font-weight: 500"
+                >{{ step.activityWorkerName }}</span
+              >
+            </ng-template>
+          </kendo-stepper>
+        </div>
+        <div class="panel styledHeader">
+          <kendo-grid [data]="steps">
+            <ng-template kendoGridToolbarTemplate [position]="'bottom'">
+              <div style="width: 100%; justify-content: flex-end;">
+              <strong>Total Time Taken: &nbsp;</strong> {{timeTaken(steps[steps.length-1].responseTimestamp, steps[0].requestTimestamp)}}
+              </div>
+            </ng-template>
+            <kendo-grid-column field="activityWorkerName" title="Activity">
+            </kendo-grid-column>
+            <kendo-grid-column field="status" title="Status" [width]="120">
+              <ng-template kendoGridCellTemplate let-dataItem>
+                {{dataItem.status | titlecase}}
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="requestTimestamp" title="Request Time" [width]="150">
+              <ng-template kendoGridCellTemplate let-dataItem>
+                {{changeDateTOIST(dataItem.requestTimestamp) | date : 'short'}}
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="responseTimestamp" title="Response Time" [width]="150">
+              <ng-template kendoGridCellTemplate let-dataItem>
+                {{changeDateTOIST(dataItem.responseTimestamp) | date : 'short'}}
+              </ng-template>
+            </kendo-grid-column>
+            <kendo-grid-column field="responseTimestamp" title="Time Taken" [width]="120">
+              <ng-template kendoGridCellTemplate let-dataItem>
+                {{timeTaken(dataItem.responseTimestamp, dataItem.requestTimestamp)}}
+              </ng-template>
+            </kendo-grid-column>
+
+            <kendo-grid-column field="errorCause" title="Error Cause">
+            </kendo-grid-column>
+          </kendo-grid>
+
+
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!steps.length" style="height: 100%; display: flex; align-items: center; justify-content: center;">
+    <h3>NO RECORD FOUND</h3>
+    </div>
+    <!--  -->
+  </kendo-card-body>
+</kendo-card>

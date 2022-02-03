@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonService } from 'src/app/Services/common.service';
 
 @Component({
   selector: 'app-header',
@@ -30,10 +31,10 @@ export class HeaderComponent implements OnInit {
     },
   ];
   kendokaAvatar = 'https://www.validchat.com/upload/photos/d-avatar.jpg';
-  constructor(private router : Router) { }
+  constructor(private router : Router, private _common: CommonService) { }
 
   ngOnInit(): void {
-    
+
   }
 
   goToProfile(){
@@ -47,6 +48,11 @@ export class HeaderComponent implements OnInit {
   showHideMenu(){
     this.showMenu = !this.showMenu;
     this.toggleDrawer.next(this.showMenu );
+    if(this.showMenu){
+      this._common.setWidth('calc(100vw - 350px)');
+    }else{
+      this._common.setWidth('calc(100vw - 160px)');
+    }
    // localStorage.setItem("drawer", this.showMenu.toString());
   //  this.drawerService.setItem("drawer", this.showMenu.toString());
   }

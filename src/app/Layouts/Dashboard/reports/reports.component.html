@@ -1,5 +1,26 @@
-<div class="row">
+<!-- <div class="row">
     <app-case-detail class="space-arround"></app-case-detail>
-    <app-case-detail-chart class="space-arround"></app-case-detail-chart>
+    <app-case-detail-chart class="space-arround" style="background: #ececec; opacity: 0.5"></app-case-detail-chart>
 </div>
-<app-cases></app-cases>
+
+ -->
+
+<div class="dashboard_container">
+  <kendo-card
+    width="100%"
+    style="height: calc(100vh - 118px); background: transparent; border: none; overflow-y: auto;"
+  >
+    <kendo-card-body style="padding: 0">
+      <div class="grid-container">
+        <div class="row_panel">
+          <div class="grid-2-col">
+            <app-case-detail></app-case-detail>
+            <app-case-detail-chart
+            ></app-case-detail-chart>
+          </div>
+        </div>
+        <div class="row_panel"><app-cases></app-cases></div>
+      </div>
+    </kendo-card-body>
+  </kendo-card>
+</div>

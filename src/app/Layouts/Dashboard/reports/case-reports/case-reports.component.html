@@ -1,1 +1,35 @@
-<p>case-reports works!</p>
+<kendo-card width="100%" style="margin-top: 18px; min-height: 100%">
+  <kendo-card-header><h3>Case Level Report</h3></kendo-card-header>
+  <kendo-card-body style="min-height: 100%">
+    <div class="grid-container">
+      <div class="panel">
+        <kendo-stepper
+          [steps]="steps"
+          stepType="label"
+          [currentStep]="steps.length"
+          orientation="vertical"
+        >
+          <ng-template kendoStepperStepTemplate let-step>
+            <div class="custom-step">
+              <span class="{{ step.icon }}"></span>
+            </div>
+            <span class="step-label">{{ step.activityWorkerName }}</span>
+          </ng-template>
+        </kendo-stepper>
+      </div>
+      <div class="panel">
+        <kendo-grid [data]="steps">
+          <kendo-grid-column field="activityWorkerName" title="ID">
+          </kendo-grid-column>
+          <kendo-grid-column field="status" title="Name"> </kendo-grid-column>
+          <kendo-grid-column field="responseTimestamp" title="Category">
+          </kendo-grid-column>
+          <kendo-grid-column field="requestTimestamp" title="Price">
+          </kendo-grid-column>
+          <kendo-grid-column field="errorCause" title="Price">
+          </kendo-grid-column>
+        </kendo-grid>
+      </div>
+    </div>
+  </kendo-card-body>
+</kendo-card>

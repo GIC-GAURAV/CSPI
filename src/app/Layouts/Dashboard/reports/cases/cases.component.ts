@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { calculateDateTime, convertDateTOIST } from 'src/app/common/commonFunctions';
+import { CommonService } from 'src/app/Services/common.service';
 
 @Component({
   selector: 'app-cases',
@@ -6,72 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cases.component.css']
 })
 export class CasesComponent implements OnInit {
-  public listItems: Array<string> = [
-    "Baseball",
-    "Basketball",
-    "Cricket",
-    "Field Hockey",
-    "Football",
-    "Table Tennis",
-    "Tennis",
-    "Volleyball",
-  ];
-  public gridData: any[] = [
-    {
-      CaseId: 1,
-      StartStage: "Case Creation",
-      StartState: "CC AutoPI",
-      CurrentStage: "Data Entry",
-      CurrentState: "CC AutoPI-ADE-Res-S",
-      CurrentStatus: "API-ADE-01-01",
-      CurrentDescription: "Request Successful",
-    },
-    {
-      CaseId: 2,
-      StartStage: "Case Creation",
-      StartState: "CC AutoPI",
-      CurrentStage: "Data Entry",
-      CurrentState: "CC AutoPI-ADE-Res-S",
-      CurrentStatus: "API-ADE-01-01",
-      CurrentDescription: "Request Successful",
-    },
-    {
-      CaseId: 3,
-      StartStage: "Case Creation",
-      StartState: "CC AutoPI",
-      CurrentStage: "Data Entry",
-      CurrentState: "CC AutoPI-ADE-Res-S",
-      CurrentStatus: "API-ADE-01-01",
-      CurrentDescription: "Request Successful",
-    },
-    {
-      CaseId: 4,
-      StartStage: "Case Creation",
-      StartState: "CC AutoPI",
-      CurrentStage: "Data Entry",
-      CurrentState: "CC AutoPI-ADE-Res-S",
-      CurrentStatus: "API-ADE-01-01",
-      CurrentDescription: "Request Successful",
-    },
-    {
-      CaseId: 5,
-      StartStage: "Case Creation",
-      StartState: "CC AutoPI",
-      CurrentStage: "Data Entry",
-      CurrentState: "CC AutoPI-ADE-Res-S",
-      CurrentStatus: "API-ADE-01-01",
-      CurrentDescription: "Request Successful",
-    },
-    {
-      CaseId: 6,
-      StartStage: "Case Creation",
-      StartState: "CC AutoPI",
-      CurrentStage: "Data Entry",
-      CurrentState: "CC AutoPI-ADE-Res-S",
-      CurrentStatus: "API-ADE-01-01",
-      CurrentDescription: "Request Successful",
-    },
-  ];
+  selectedCaseId = ""
+  $caseSub: Subscription = new Subscription;
+
+
   dataSource = {
     "chart": {
         "caption": "",
@@ -115,9 +56,35 @@ export class CasesComponent implements OnInit {
           }]
     }
   }
-  constructor() { }
+
+  public steps:any[] =    [];
+  constructor( private _common : CommonService) { }
 
   ngOnInit(): void {
+    this.$caseSub = this._common.caseID.subscribe(caseId=>{
+      if(caseId){
+        this.selectedCaseId = caseId;
+        this.getCaseIdData(this.selectedCaseId)
+      }
+    })
   }
 
+  getCaseIdData(id: any){
+    this._common.fetchCaseLevelData(id).subscribe(res=>{
+      if(res.length){
+        this.steps = res
+      }
+      else{
+        this.steps = [];
+      }
+    })
+  }
+
+  changeDateTOIST(inputData: any){
+    return convertDateTOIST(inputData, 'Asia/Kolkata');
+  }
+
+  timeTaken (a: any,b:any){
+      return calculateDateTime(a,b);
+  }
 }

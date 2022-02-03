@@ -1,15 +1,11 @@
-.col {
-  display: flex;
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-}
+
 .k-dropdown {
   padding: 5px 0;
   width: 15.4em;
 }
 .calendar-wrapper {
-  padding-left: 20px;
+
+  width: 100%;
 }
 @media (max-width: 455px) {
   .calendar-wrapper {
@@ -38,4 +34,17 @@ kendo-drawer-content {
   background-color: #fff;
   border-radius: 2px;
   padding: 5px;
+}
+
+.searchpanel{
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+  max-height: 240px;
+
+}
+
+small{
+  font-size: .6rem;
 }

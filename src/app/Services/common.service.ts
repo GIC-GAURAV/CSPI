@@ -11,12 +11,14 @@ import { AppConfig } from './app-config.service';
 })
 export class CommonService {
   api_url= '';
+  panelWidth = 'calc(100vw - 350px)';
+  caseID = new BehaviorSubject('');
 
   //apiURL = 'http://10.2.60.122:8097/api/india/';
   constructor(private _http: HttpClient, public config: AppConfig) {
     this.api_url = config.apiUrl;
   }
-  
+
   contentWidth:any = new BehaviorSubject(null)
 
   getCountforActivity(obj: CountRequestModel): Observable<CountResponseModel> {
@@ -29,5 +31,16 @@ export class CommonService {
     return this._http.post<WorkerLevelResponseModel>(
       `${this.api_url}get-worker-level-name-count`, obj
     )
+  }
+  setWidth(val: string){
+    this.panelWidth = val;
+  }
+
+  fetchCaseLevelData(caseID:any): Observable<any[]>{
+    const obj = {
+      "caseNo": caseID
+  }
+
+    return this._http.post<any>(`${this.api_url}find-report`, obj)
   }
 }

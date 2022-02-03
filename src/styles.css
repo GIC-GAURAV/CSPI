@@ -11,7 +11,7 @@ body {
 .row {
   display: flex;
   justify-content: center;
-  padding: 5px;
+
   margin: 0;
   box-sizing: border-box;
 }
@@ -62,9 +62,9 @@ body {
 #wrapper .k-card {
   overflow: visible !important;
 }
-#wrapper{
+/* #wrapper{
   max-width: 1000px;
-}
+} */
 kendo-tooltip {
   background: rgb(255, 255, 255) !important;
   color: black !important;
@@ -226,6 +226,8 @@ kendo-tooltip {
   height: 1.8rem;
   align-items: center;
   justify-content: center;
+  min-height: 50px;
+  padding: 0 10px;
 }
 .stage_count {
   font-size: 4rem;
@@ -309,4 +311,15 @@ strong {
 /* width */
 .w-100 {
   width: 100% !important;
+}
+
+.styledHeader th{
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  background-color:rgb(10, 108, 221) ;
+  color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-weight: 500 !important;
 }

@@ -3,73 +3,112 @@ import { CommonService } from 'src/app/Services/common.service';
 
 const  data = {
   chart: {
-    caption: "GDP Growth Rate Comparison",
+    caption: "Status",
     yaxisname: "",
-    subcaption: "India vs China",
+    subcaption: "",
     drawcrossline: "1",
-    numbersuffix: "%",
-    plottooltext: "$seriesName's GDP grew $dataValue in $label",
+    plottooltext: "$value $seriesName's in $label",
     theme: "fusion"
   },
   categories: [
     {
       category: [
         {
-          label: "Jan"
+          label: "29/01/2022"
         },
         {
-          label: "Feb"
+          label: "30/01/2022"
         },
         {
-          label: "Mar"
+          label: "31/01/2022"
         },
         {
-          label: "Apr"
+          label: "01/02/2022"
         },
         {
-          label: "May"
+          label: "02/02/2022"
         }
       ]
     }
   ],
   dataset: [
     {
-      seriesname: "India",
+      seriesname: "REQUESTS RECEIVED",
       data: [
         {
-          value: "9.2"
+          value: "15"
         },
         {
-          value: "7.9"
+          value: "12"
         },
         {
-          value: "7.5"
+          value: "18"
         },
         {
-          value: "7"
+          value: "20"
         },
         {
-          value: "6.1"
+          value: "16"
         }
       ]
     },
     {
-      seriesname: "China",
+      seriesname: "REQUESTS PROCESSED",
       data: [
         {
-          value: "6.7"
+          value: "15"
         },
         {
-          value: "6.7"
+          value: "6"
         },
         {
-          value: "6.7"
+          value: "12"
         },
         {
-          value: "6.8"
+          value: "20"
         },
         {
-          value: "6.9"
+          value: "16"
+        }
+      ]
+    },
+    {
+      seriesname: "REQUESTS IN QUEUE",
+      data: [
+        {
+          value: "0"
+        },
+        {
+          value: "0"
+        },
+        {
+          value: "0"
+        },
+        {
+          value: "0"
+        },
+        {
+          value: "0"
+        }
+      ]
+    },
+    {
+      seriesname: "EXCEPTIONS RECEIVED",
+      data: [
+        {
+          value: "0"
+        },
+        {
+          value: "6"
+        },
+        {
+          value: "4"
+        },
+        {
+          value: "0"
+        },
+        {
+          value: "0"
         }
       ]
     }

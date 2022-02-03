@@ -1,3 +1,76 @@
-*{
-  font-size: .8rem;
+
+h3{
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 5px 0px;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 10px;
+}
+
+.panel{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.panel1 {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+}
+
+
+.k-stepper > .k-progressbar {
+  height: 4px;
+  top: 18px;
+}
+
+.k-stepper > .k-progressbar .k-state-selected {
+
+}
+
+.custom-step {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ff8008;
+  border-radius: 50px;
+  background-clip: padding-box;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding-left: 10px;
+}
+
+.k-step-done .custom-step {
+  background-image: radial-gradient(
+    circle at center,
+    #ffc837 20px,
+    #ff8008
+  );
+}
+
+.k-step:not(.k-step-done):not(.k-step-current) .custom-step {
+  border: 1px solid #ccc;
+
+}
+
+.k-step-link .k-icon {
+  font-size: 24px;
+  color: #000;
+}
+
+.k-step-link .step-label {
+  margin-left: 80px;
+  font-weight: 500;
+  padding-left: 10px;
 }

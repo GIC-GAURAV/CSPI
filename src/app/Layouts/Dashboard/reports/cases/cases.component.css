@@ -1,7 +1,7 @@
-.detail-section {
+/* .detail-section {
   width: 100% !important;
-  /* height: 200px; */
-  border: 1px solid purple;
+
+
   background-color: white;
   margin: 2px 8px;
   margin-bottom: 0;
@@ -21,7 +21,7 @@ kendo-card-header {
 kendo-card {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+
   align-items: center;
   border-radius: 0;
   border: none;
@@ -56,3 +56,95 @@ kendo-card {
 th {
   text-transform: uppercase;
 }
+ */
+h3{
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 10px;
+}
+
+.panel{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.panel1 {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+}
+
+
+.k-stepper > .k-progressbar {
+  height: 4px;
+  top: 18px;
+  padding-left: 10px;
+}
+
+.k-stepper > .k-progressbar .k-state-selected {
+
+}
+
+.custom-step {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #ff8008;
+  border-radius: 50px;
+  background-clip: padding-box;
+  box-sizing: border-box;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+
+}
+
+.k-step-done .custom-step {
+  background-image: radial-gradient(
+    circle at center,
+    #ffc837 20px,
+    #ff8008
+  );
+}
+
+.k-step:not(.k-step-done):not(.k-step-current) .custom-step {
+  border: 1px solid #ccc;
+
+}
+
+.k-step-link .k-icon {
+  font-size: 24px;
+  color: #000;
+}
+
+.k-step-link .step-label {
+  margin-left: 200px;
+  font-weight: 500;
+  padding: 0 10px;
+  padding-left: 40px;
+}
+
+.custom-step.greenBg{
+  background-color: #6D9F71;
+  color: #fff;
+  border: 1px solid #ccc
+}
+
+.custom-step.redBg{
+  background-color: #DD4A48;
+  color: #fff;
+  border: 1px solid #ccc
+}
+

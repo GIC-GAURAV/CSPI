@@ -91,7 +91,7 @@ h1 {
 
 /* Carousel */
 #wrapper {
-  width: 100%;
+  width: 100vw;
   position: relative;
   padding: 0 10px;
   margin: auto;
@@ -141,16 +141,16 @@ h1 {
   grid-auto-flow: column;
   margin: auto;
   box-sizing: border-box;
-  
+
 } */
 
 /* .stage_count_card {
   width: 100%;
   margin: 0;
-  
+
 } */
 .dashboard_container{
-  
+
   /* height: 100vh; */
 
   display: grid;
@@ -174,9 +174,9 @@ h1 {
     margin: auto;
     height: 188px !important;
   } */
-  @media (max-width: 2560px) {
+  /* @media (max-width: 2560px) {
     #wrapper {
-      max-width: 2200px;
+      max-width: calc(100% - 200px);
     }
     #prev {
       left: -55px !important;
@@ -238,7 +238,7 @@ h1 {
     #next {
       right: -5px !important;
     }
-  }
+  } */
   .btn-trans{
 background-color: transparent !important;
   }

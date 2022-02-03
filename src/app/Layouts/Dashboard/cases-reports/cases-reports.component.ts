@@ -13,6 +13,7 @@ export class CasesReportsComponent implements OnInit ,DoCheck{
   requestProcessed = 0;
   requestInQueue = 0;
   exceptionCount = 0;
+  dynaWidth = 'calc(100vw - 360px)';
 
   public opened = false;
   carousel : any
@@ -64,7 +65,7 @@ export class CasesReportsComponent implements OnInit ,DoCheck{
   ];
 
   public cardData : WorkerLevelRespons[] =[];
-  constructor(private _common: CommonService) { }
+  constructor(public _common: CommonService) { }
 
   ngOnInit(): void {
     this.slider();
@@ -155,7 +156,7 @@ console.log("====>",this.wrapperWidth)
   getWorkerLevelActivityData(){
     const obj: WorkerLevelReqCountModel = {
       fromDate: Date.now().toString(),
-      toDate: (Date.now()-30*24*60*60*1000).toString()
+      toDate: (Date.now()).toString()
     }
 
     this._common.fetchWorkerLevelData(obj).subscribe(data=>{
